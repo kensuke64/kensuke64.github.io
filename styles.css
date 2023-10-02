@@ -34,7 +34,7 @@ a:hover {
 body {
     font-family: Arial, monospace;
     margin: 0;
-    padding: 15%; /* 左右に15%の余白を追加 */
+    padding: 0% 20%; /* 左右に15%の余白を追加 */
     background-color: #f4f4f4;
 }
 
