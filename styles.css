@@ -20,7 +20,7 @@ a:hover {
 
 .experience-table th, .experience-table td {
     padding: 8px;
-    border: 1px solid black; /* 黒い線を追加 */
+    border: 1px solid black !important; /* 黒い線を追加 */
     text-align: left;
 }
 
