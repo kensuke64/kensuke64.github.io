@@ -11,16 +11,36 @@ a:hover {
     text-decoration: underline;
 }
 
+.navbar ul {
+    list-style: none;
+    padding: 0;
+    text-align: right; /* ナビゲーションリンクを右揃えにする */
+}
+
+.navbar li {
+    display: inline; /* ナビゲーションリンクを横並びに配置 */
+    margin-left: 20px; /* ナビゲーションリンク間の間隔を設定 */
+}
+
+.navbar a {
+    color: #0078e7;
+    text-decoration: none;
+}
+
+.navbar a:hover {
+    text-decoration: underline;
+}
+
 .experience-table {
     width: 100%;
-    border-collapse: collapse;
     font-size: 16px;
     margin-top: 20px;
+    border-collapse: collapse; 
 }
 
 .experience-table th, .experience-table td {
     padding: 8px;
-    border: 1px solid black; /* 黒い線を追加 */
+    border: 1px solid #000; 
     text-align: left;
 }
 
