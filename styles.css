@@ -11,31 +11,6 @@ a:hover {
     text-decoration: underline;
 }
 
-.experience-card {
-    background-color: #ffffff;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    padding: 20px;
-    margin-bottom: 20px;
-}
-
-.experience-card h2 {
-    font-size: 20px;
-    color: #0078e7;
-    margin-bottom: 10px;
-}
-
-.experience-card p {
-    font-size: 16px;
-    color: #333;
-    margin: 0;
-}
-
-.experience-card a {
-    color: #0078e7;
-    text-decoration: none;
-    display: block;
-}
-
 .experience-table {
     width: 100%;
     border-collapse: collapse;
