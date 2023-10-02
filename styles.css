@@ -14,12 +14,12 @@ a:hover {
 .navbar ul {
     list-style: none;
     padding: 0;
-    text-align: right; /* ナビゲーションリンクを右揃えにする */
+    text-align: right; 
 }
 
 .navbar li {
-    display: inline; /* ナビゲーションリンクを横並びに配置 */
-    margin-left: 20px; /* ナビゲーションリンク間の間隔を設定 */
+    display: inline; 
+    margin-left: 20px; 
 }
 
 .navbar a {
@@ -33,8 +33,9 @@ a:hover {
 
 body {
     font-family: Arial, monospace;
-    margin: 0;
-    padding: 0% 20%; /* 左右に15%の余白を追加 */
+    margin-right: 20%;
+    margin-left: 20%;
+    padding: 0;
     background-color: #f4f4f4;
 }
 
@@ -43,7 +44,7 @@ body {
     font-size: 16px;
     margin-top: 20px;
     border-collapse: collapse;
-    table-layout: fixed; /* テーブルの列幅を固定する */
+    table-layout: fixed;
 }
 
 .experience-table th, .experience-table td {
