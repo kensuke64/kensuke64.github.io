@@ -1,0 +1,12 @@
+/* styles.css */
+
+header {
+    background-color: #0078e7;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+}
+
+a:hover {
+    text-decoration: underline;
+}
