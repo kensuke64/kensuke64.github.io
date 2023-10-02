@@ -11,29 +11,29 @@ a:hover {
     text-decoration: underline;
 }
 
-.experiences-table {
+.experience-table {
     width: 100%;
     border-collapse: collapse;
     font-size: 16px;
     margin-top: 20px;
 }
 
-.experiences-table th, .experiences-table td {
+.experience-table th, .experience-table td {
     padding: 8px;
-    border: 1px solid black !important;
+    border: 1px solid black; /* 黒い線を追加 */
     text-align: left;
 }
 
-.experiences-table th {
+.experience-table th {
     background-color: #0078e7;
     color: #fff;
 }
 
-.experiences-table tr:nth-child(even) {
+.experience-table tr:nth-child(even) {
     background-color: #f2f2f2;
 }
 
-.experiences-table a {
+.experience-table a {
     color: #0078e7;
     text-decoration: none;
 }
