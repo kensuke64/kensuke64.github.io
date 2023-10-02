@@ -27,4 +27,11 @@ a:hover {
 .experience-card p {
     font-size: 16px;
     color: #333;
+    margin: 0;
+}
+
+.experience-card a {
+    color: #0078e7;
+    text-decoration: none;
+    display: block;
 }
