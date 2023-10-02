@@ -32,9 +32,9 @@ a:hover {
 }
 
 body {
-    font-family: Arial, sans-serif;
-    margin: 20px; /* 上下左右に20pxの余白を追加 */
-    padding: 0;
+    font-family: Arial, monospace;
+    margin: 0;
+    padding: 0 15%; /* 左右に15%の余白を追加 */
     background-color: #f4f4f4;
 }
 
