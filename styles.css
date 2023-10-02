@@ -11,29 +11,52 @@ a:hover {
     text-decoration: underline;
 }
 
-.experience-table {
+.education-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 16px;
+    margin-top: 20px;
+    background-color: #ffffff; /* テーブル全体の背景色を設定 */
+}
+
+.education-table th, .education-table td {
+    padding: 8px;
+    border: 1px solid black;
+    text-align: left;
+}
+
+.education-table th {
+    background-color: #0078e7;
+    color: #fff;
+}
+
+.education-table tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+.experiences-table {
     width: 100%;
     border-collapse: collapse;
     font-size: 16px;
     margin-top: 20px;
 }
 
-.experience-table th, .experience-table td {
+.experiences-table th, .experiences-table td {
     padding: 8px;
     border: 1px solid black !important;
     text-align: left;
 }
 
-.experience-table th {
+.experiences-table th {
     background-color: #0078e7;
     color: #fff;
 }
 
-.experience-table tr:nth-child(even) {
+.experiences-table tr:nth-child(even) {
     background-color: #f2f2f2;
 }
 
-.experience-table a {
+.experiences-table a {
     color: #0078e7;
     text-decoration: none;
 }
