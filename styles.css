@@ -67,7 +67,6 @@ body {
     text-decoration: none;
 }
 
-/* 各列の比重に基づいて幅を設定 */
 .experience-table th:nth-child(1),
 .experience-table td:nth-child(1) {
     width: 20%;
