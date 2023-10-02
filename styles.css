@@ -35,12 +35,13 @@ a:hover {
     width: 100%;
     font-size: 16px;
     margin-top: 20px;
-    border-collapse: collapse; 
+    border-collapse: collapse;
+    table-layout: fixed; /* テーブルの列幅を固定する */
 }
 
 .experience-table th, .experience-table td {
     padding: 8px;
-    border: 1px solid #000; 
+    border: 1px solid #000;
     text-align: left;
 }
 
@@ -56,4 +57,25 @@ a:hover {
 .experience-table a {
     color: #0078e7;
     text-decoration: none;
+}
+
+/* 各列の比重に基づいて幅を設定 */
+.experience-table th:nth-child(1),
+.experience-table td:nth-child(1) {
+    width: 20%;
+}
+
+.experience-table th:nth-child(2),
+.experience-table td:nth-child(2) {
+    width: 20%;
+}
+
+.experience-table th:nth-child(3),
+.experience-table td:nth-child(3) {
+    width: 15%;
+}
+
+.experience-table th:nth-child(4),
+.experience-table td:nth-child(4) {
+    width: 45%;
 }
