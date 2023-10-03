@@ -18,8 +18,7 @@ a:hover {
 }
 
 .navbar li {
-    display: inline; 
-    margin-left: 20px; 
+    display: inline;  
 }
 
 .navbar a {
