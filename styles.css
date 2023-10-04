@@ -14,11 +14,12 @@ a:hover {
 .navbar ul {
     list-style: none;
     padding: 0;
-    text-align: right; 
+    text-align: center; 
 }
 
 .navbar li {
-    display: inline;  
+    display: inline; 
+    margin-left: 20px; 
 }
 
 .navbar a {
