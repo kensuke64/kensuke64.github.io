@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kensuke Sawada / Activities</title>
+<meta name="description" content="Activities — Kensuke Sawada.">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="page">
+
+  <nav class="site-nav" aria-label="Primary">
+    <p class="dateline">Updated <span class="accent" id="last-updated">2026.04</span></p>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="cv.html">CV</a></li>
+      <li><a href="research.html">Research</a></li>
+      <li><a href="teaching.html">Teaching</a></li>
+      <li><a href="activities.html" aria-current="page">Activities</a></li>
+    </ul>
+  </nav>
+
+  <main>
+
+    <header class="page-head">
+      <h1 class="page-title">Activities</h1>
+      <p class="page-lede">Conferences, workshops, and other engagements.</p>
+    </header>
+
+    <div id="events-container"></div>
+
+    <ol class="misc-list" id="events-source">
+      <li class="misc-item" data-date="2026-11-28">
+        <img src="images/logo.png" alt="Personnel Economics Workshop" class="misc-photo" style="background: var(--bg); object-fit: contain; filter: none; transform: scale(1.15);">
+        <div class="misc-text">
+          <h3 class="paper-title">Personnel Economics Workshop</h3>
+          <p class="paper-meta">Waseda University, Tokyo, Japan. November 28, 2026.</p>
+          <p class="paper-meta">Presenting: TBA <a href="#">[Link]</a></p>
+        </div>
+      </li>
+      <li class="misc-item" data-date="2026-09-01">
+        <img src="images/img-jlec.svg" alt="JLEC 2026" class="misc-photo">
+        <div class="misc-text">
+          <h3 class="paper-title">Japan Labor Economics Conference 2026</h3>
+          <p class="paper-meta">XX University, Tokyo, Japan. September DD, 2026.</p>
+          <p class="paper-meta"><em>Scaling the Heights at Work: Evidence on the Height Premium in the Internal Labor Market</em> (poster). <a href="#">[Link]</a></p>
+        </div>
+      </li>
+      <li class="misc-item" data-date="2026-12-10">
+        <img src="images/img-aasle.png" alt="AASLE 2026" class="misc-photo" style="background: var(--bg); object-fit: contain; filter: none; transform: scale(1.15);">
+        <div class="misc-text">
+          <h3 class="paper-title">AASLE Conference 2026</h3>
+          <p class="paper-meta">Peking University, Beijing, China. December 10&ndash;12, 2026.</p>
+          <p class="paper-meta"><em>Scaling the Heights at Work: Evidence on the Height Premium in the Internal Labor Market</em>. <a href="#">[Link]</a></p>
+        </div>
+      </li>
+    </ol>
+
+    <details class="other-section">
+      <summary class="label">Non-Academic</summary>
+      <ol class="misc-list">
+        <li class="misc-item">
+          <img src="images/img-emira.jpg" alt="EMIRA Business Contest 2024" class="misc-photo">
+          <div class="misc-text">
+            <h3 class="paper-title">EMIRA Business Contest 2024</h3>
+            <p class="paper-meta">with Hikaru Kurahashi. Energy Intercollegiate Business Contest, organized by EMIRA Editorial Committee and Waseda University PEP. 2024. <a href="https://emira-t.jp/prototype/23912/">Media</a></p>
+            <p class="paper-meta"><em>Excellence Award.</em></p>
+          </div>
+        </li>
+        <li class="misc-item">
+          <img src="images/img-datachem-alpha.png" alt="Data Chemistry Inc." class="misc-photo" style="background: var(--bg); object-fit: contain; filter: none; transform: scale(1.15);">
+          <div class="misc-text">
+            <h3 class="paper-title">Data Scientist Intern, Data Chemistry Inc.</h3>
+            <p class="paper-meta">October 2022 &ndash; February 2023.</p>
+            <p class="paper-meta">Data analysis for advertising and marketing using Python and SQL; contributed to new product development.</p>
+          </div>
+        </li>
+      </ol>
+    </details>
+
+  </main>
+
+</div>
+
+<script>
+  (function () {
+    var source = document.getElementById('events-source');
+    var container = document.getElementById('events-container');
+    var items = Array.from(source.querySelectorAll('.misc-item'));
+    var today = new Date();
+    today.setHours(0, 0, 0, 0);
+
+    var upcoming = [];
+    var byYear = {};
+
+    items.forEach(function (item) {
+      var dateStr = item.getAttribute('data-date');
+      var date = new Date(dateStr + 'T00:00:00');
+      if (date >= today) {
+        upcoming.push({ date: date, el: item });
+      } else {
+        var y = date.getFullYear().toString();
+        if (!byYear[y]) byYear[y] = [];
+        byYear[y].push({ date: date, el: item });
+      }
+    });
+
+    upcoming.sort(function (a, b) { return a.date - b.date; });
+
+    if (upcoming.length > 0) {
+      var section = document.createElement('section');
+      var h2 = document.createElement('h2');
+      h2.className = 'label';
+      h2.textContent = 'Upcoming';
+      section.appendChild(h2);
+      var ol = document.createElement('ol');
+      ol.className = 'misc-list';
+      upcoming.forEach(function (u) { ol.appendChild(u.el); });
+      section.appendChild(ol);
+      container.appendChild(section);
+    }
+
+    var years = Object.keys(byYear).sort(function (a, b) { return b - a; });
+    years.forEach(function (y) {
+      var list = byYear[y];
+      list.sort(function (a, b) { return b.date - a.date; });
+      var details = document.createElement('details');
+      var summary = document.createElement('summary');
+      summary.className = 'label';
+      summary.textContent = y;
+      details.appendChild(summary);
+      var ol = document.createElement('ol');
+      ol.className = 'misc-list';
+      list.forEach(function (item) { ol.appendChild(item.el); });
+      details.appendChild(ol);
+      container.appendChild(details);
+    });
+
+    source.style.display = 'none';
+  })();
+</script>
+
+<script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,546 @@
+/* ------------------------------------------------------------------
+   Kensuke Sawada — alt edition "Drama"
+   岸辺露伴(NHK ドラマ版)的美術。暖色グラファイト紙、朱の挿し色、
+   SF Pro Display 800、モノスペースのメタ情報、モノクロ強コントラストの写真。
+   非対称タイトルカード組版。
+   ------------------------------------------------------------------ */
+
+:root {
+  --bg:           #F4F5F7;        /* cool gray-white — 新聞/写真集 */
+  --bg-tint:      #EBEDF0;        /* やや沈めた寒色オフホワイト */
+  --ink:          #14171C;        /* cool near-black */
+  --ink-soft:     #5C636E;
+  --ink-faint:    rgba(20, 23, 28, 0.36);
+  --rule:         rgba(20, 23, 28, 0.16);
+  --hairline:     rgba(20, 23, 28, 0.08);
+
+  --accent:       #7A2E2A;        /* 古い赤レンガ */
+  --accent-press: #5C2220;
+  --accent-tint:  rgba(122, 46, 42, 0.10);
+  --gold:         #C4A542;        /* secondary mustard(未使用) */
+
+  --sans:         -apple-system, BlinkMacSystemFont, "SF Pro Display",
+                  "SF Pro Text", "Helvetica Neue", system-ui, sans-serif;
+  --sans-jp:      "Hiragino Sans", "Hiragino Kaku Gothic ProN",
+                  "Yu Gothic", "Meiryo", sans-serif;
+  --mono:         ui-monospace, "SF Mono", "JetBrains Mono",
+                  "IBM Plex Mono", Menlo, Consolas, monospace;
+  --font-body:    var(--sans), var(--sans-jp);
+
+  --measure:      780px;
+  --max-page:     1280px;
+  --page-x:       clamp(28px, 6vw, 80px);
+  --gap-section:  clamp(80px, 11vw, 140px);
+  --nav-gap:      clamp(40px, 5vw, 64px);
+
+  --ease:         cubic-bezier(0.4, 0, 0.2, 1);
+  --t:            color 200ms var(--ease),
+                  text-decoration-color 200ms var(--ease),
+                  background-color 200ms var(--ease);
+}
+
+::selection { background: var(--accent-tint); color: var(--ink); }
+
+/* Reset */
+*, *::before, *::after { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; font-size: 106.25%; }
+body, h1, h2, h3, p, ol, ul, dl, dd, figure { margin: 0; }
+ol, ul { padding: 0; list-style: none; }
+
+body {
+  font-family: var(--font-body);
+  font-weight: 400;
+  font-size: 1rem;
+  line-height: 1.6;
+  color: var(--ink);
+  background: var(--bg);
+
+  font-feature-settings: "kern" 1, "liga" 1, "calt" 1, "ss01" 1;
+  font-optical-sizing: auto;
+  font-synthesis: none;
+  text-rendering: geometricPrecision;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-wrap: pretty;
+  hanging-punctuation: first last;
+
+  min-height: 100vh;
+  padding: clamp(28px, 4vw, 48px) 0 clamp(80px, 10vw, 120px);
+}
+
+p { max-width: var(--measure); }
+p + p { margin-top: 1em; }
+
+.page {
+  max-width: var(--max-page);
+  margin: 0 auto;
+  padding: 0 var(--page-x);
+}
+main { max-width: var(--measure); }
+section + section { margin-top: var(--gap-section); }
+
+/* Links */
+a {
+  color: var(--ink);
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.22em;
+  text-decoration-color: color-mix(in srgb, var(--ink) 35%, transparent);
+  transition: var(--t);
+}
+a:hover {
+  color: var(--accent);
+  text-decoration-color: var(--accent);
+}
+a:active { color: var(--accent-press); }
+a:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 2px var(--accent);
+}
+
+/* ------------------------------------------------------------------
+   Top nav — flush right, mono small caps
+   ------------------------------------------------------------------ */
+.site-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: var(--nav-gap);
+  max-width: var(--measure);
+}
+.site-nav .dateline {
+  font-family: var(--mono);
+  font-size: 0.74rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+}
+.site-nav .dateline .accent { color: var(--accent); }
+.site-nav ul {
+  display: flex;
+  gap: 1.8em;
+}
+.site-nav a {
+  font-family: var(--mono);
+  font-size: 0.74rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+  text-decoration: none;
+}
+.site-nav a:hover { color: var(--ink); }
+.site-nav a[aria-current="page"] {
+  color: var(--accent);
+  pointer-events: none;
+}
+
+@media (max-width: 520px) {
+  .site-nav { flex-direction: column; gap: 1.2em; }
+  .site-nav ul { flex-wrap: wrap; gap: 1.1em; }
+}
+
+/* ------------------------------------------------------------------
+   Title card (Home) — 巨大ディスプレイ + 朱の姓 + 非対称
+   ------------------------------------------------------------------ */
+.title-card {
+  margin-bottom: calc(var(--gap-section) * 0.7);
+}
+.title-card .episode-mark {
+  display: flex;
+  align-items: center;
+  gap: 0.9em;
+  font-family: var(--mono);
+  font-size: 0.78rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 1.6em;
+}
+.title-card .episode-mark::before {
+  content: "";
+  width: 36px;
+  height: 1px;
+  background: var(--accent);
+}
+.title-card h1 {
+  font-family: var(--sans);
+  font-weight: 600;
+  font-size: clamp(2.6rem, 6vw, 4rem);
+  line-height: 1.0;
+  letter-spacing: -0.03em;
+  color: var(--ink);
+}
+.title-card h1 .surname {
+  color: var(--accent);
+}
+.title-card .subtitle {
+  margin-top: 1.6em;
+  font-size: clamp(1.1rem, 1.7vw, 1.3rem);
+  font-weight: 500;
+  color: var(--ink);
+  letter-spacing: -0.01em;
+  max-width: 36ch;
+}
+
+.title-card-body {
+  display: grid;
+  grid-template-columns: 220px 1fr;
+  gap: clamp(28px, 4vw, 56px);
+  margin-top: clamp(48px, 6vw, 72px);
+  align-items: start;
+}
+.title-card-body .portrait { margin: 0; }
+.title-card-body .portrait img {
+  width: 100%;
+  height: auto;
+  display: block;
+  filter: saturate(0.85) contrast(1.08);
+}
+.title-card-body .portrait figcaption {
+  margin-top: 0.9em;
+  font-family: var(--mono);
+  font-size: 0.68rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+  white-space: nowrap;
+}
+.title-card-body .affiliation {
+  font-size: 1.02rem;
+  color: var(--ink-soft);
+  line-height: 1.75;
+  letter-spacing: -0.005em;
+  max-width: none;
+  padding-top: 0.4em;
+}
+.title-card-body .affiliation strong {
+  color: var(--ink);
+  font-weight: 500;
+}
+
+@media (max-width: 640px) {
+  .title-card-body { grid-template-columns: 140px 1fr; gap: 24px; }
+}
+@media (max-width: 480px) {
+  .title-card-body { grid-template-columns: 1fr; gap: 20px; }
+  .title-card-body .portrait img { width: 160px; }
+}
+
+/* ------------------------------------------------------------------
+   Section labels — "WORKING PAPERS ────────────"
+   ------------------------------------------------------------------ */
+.label {
+  display: flex;
+  align-items: center;
+  gap: 1em;
+  font-family: var(--mono);
+  font-size: 0.75rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+  margin-bottom: 1.8em;
+  font-weight: 500;
+}
+.label::after {
+  content: "";
+  flex: 1;
+  height: 1px;
+  background: var(--rule);
+}
+
+/* ------------------------------------------------------------------
+   Page head — 大判ディスプレイ
+   ------------------------------------------------------------------ */
+.page-head {
+  margin-bottom: calc(var(--gap-section) * 0.55);
+}
+.page-head .episode-mark {
+  display: flex;
+  align-items: center;
+  gap: 0.9em;
+  font-family: var(--mono);
+  font-size: 0.74rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 1.4em;
+}
+.page-head .episode-mark::before {
+  content: "";
+  width: 36px;
+  height: 1px;
+  background: var(--accent);
+}
+.page-title {
+  font-family: var(--sans);
+  font-weight: 600;
+  font-size: clamp(2.6rem, 6vw, 4rem);
+  line-height: 1.0;
+  letter-spacing: -0.03em;
+  color: var(--ink);
+  text-wrap: balance;
+}
+.page-lede {
+  margin-top: 1.4em;
+  font-size: 1.05rem;
+  color: var(--ink-soft);
+  max-width: 44ch;
+}
+.page-lede a {
+  font-family: var(--mono);
+  font-size: 0.85rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--accent);
+  text-decoration: none;
+  border-bottom: 1px solid color-mix(in srgb, var(--accent) 50%, transparent);
+  padding-bottom: 2px;
+}
+.page-lede a:hover {
+  color: var(--ink);
+  border-color: var(--ink);
+}
+
+/* ------------------------------------------------------------------
+   About
+   ------------------------------------------------------------------ */
+.about p { font-size: 1.02rem; line-height: 1.75; }
+.about .acknowledgment {
+  font-size: 0.92rem;
+  color: var(--ink-soft);
+}
+
+/* ------------------------------------------------------------------
+   Papers
+   ------------------------------------------------------------------ */
+.papers > li + li {
+  margin-top: 2.6em;
+  padding-top: 2.6em;
+  border-top: 1px solid var(--hairline);
+}
+.paper-title {
+  font-family: var(--sans);
+  font-weight: 700;
+  font-size: 1.35rem;
+  line-height: 1.25;
+  letter-spacing: -0.018em;
+  color: var(--ink);
+  text-wrap: pretty;
+  margin: 0;
+}
+.paper-meta {
+  margin-top: 0.6em;
+  font-size: 0.92rem;
+  color: var(--ink-soft);
+  line-height: 1.65;
+  max-width: none;
+}
+.paper-meta a {
+  color: var(--ink-soft);
+  text-decoration-color: color-mix(in srgb, var(--ink-soft) 40%, transparent);
+}
+.paper-meta a:hover {
+  color: var(--accent);
+  text-decoration-color: var(--accent);
+}
+.paper-where { color: var(--ink-soft); }
+.nowrap {
+  white-space: nowrap;
+  font-family: var(--mono);
+  font-size: 0.85em;
+  letter-spacing: 0.04em;
+}
+
+/* Abstract */
+.abstract { margin-top: 1em; }
+.abstract summary {
+  cursor: pointer;
+  list-style: none;
+  font-family: var(--mono);
+  font-size: 0.74rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6em;
+  padding: 0.2em 0;
+}
+.abstract summary::-webkit-details-marker { display: none; }
+.abstract summary::before {
+  content: "[+]";
+  color: var(--accent);
+  font-family: var(--mono);
+  letter-spacing: 0;
+}
+.abstract[open] summary::before { content: "[−]"; }
+.abstract summary:hover { color: var(--ink); }
+.abstract p {
+  margin-top: 1em;
+  font-size: 0.96rem;
+  line-height: 1.75;
+  color: var(--ink);
+  max-width: none;
+  text-align: justify;
+  hyphens: auto;
+}
+
+/* ------------------------------------------------------------------
+   Misc list (Activities, CV)
+   ------------------------------------------------------------------ */
+.misc-list { max-width: var(--measure); }
+.misc-item {
+  display: grid;
+  grid-template-columns: 140px 1fr;
+  gap: 1.6em;
+  align-items: start;
+}
+.misc-item + .misc-item {
+  margin-top: 2.2em;
+  padding-top: 2.2em;
+  border-top: 1px solid var(--hairline);
+}
+.misc-photo {
+  width: 140px;
+  height: 100px;
+  object-fit: cover;
+  filter: saturate(0.85) contrast(1.08);
+  background: var(--bg-tint);
+}
+.misc-photo[src$=".svg"] {
+  object-fit: contain;
+  background: var(--bg-tint);
+  padding: 14px;
+  filter: none;
+}
+.misc-list .paper-title {
+  font-size: 1.08rem;
+  font-weight: 600;
+}
+.misc-text { min-width: 0; }
+
+@media (max-width: 520px) {
+  .misc-item { grid-template-columns: 1fr; gap: 0.9em; }
+  .misc-photo { width: 100%; height: auto; aspect-ratio: 7 / 5; }
+  .misc-photo[src$=".svg"] { aspect-ratio: 7 / 5; }
+}
+
+/* ------------------------------------------------------------------
+   Details (CV/Activities sections)
+   ------------------------------------------------------------------ */
+details { max-width: var(--measure); }
+details + details { margin-top: var(--gap-section); }
+details summary.label {
+  cursor: pointer;
+  list-style: none;
+  transition: color 200ms var(--ease);
+}
+details summary.label::-webkit-details-marker { display: none; }
+details > summary.label::before {
+  content: "[+]";
+  font-family: var(--mono);
+  color: var(--accent);
+  font-size: 0.9em;
+  letter-spacing: 0;
+  transition: color 200ms var(--ease);
+}
+details[open] > summary.label::before { content: "[−]"; }
+details[open] summary.label { color: var(--ink); }
+details summary.label:hover { color: var(--ink); }
+details summary.label:hover::before { color: var(--accent-press); }
+
+.other-section { margin-top: calc(var(--gap-section) * 1.2); }
+
+/* ------------------------------------------------------------------
+   Awards
+   ------------------------------------------------------------------ */
+.award-list { max-width: var(--measure); }
+.award-item {
+  display: grid;
+  grid-template-columns: 7rem 1fr;
+  column-gap: 1.6em;
+  align-items: baseline;
+  padding: 0.85em 0;
+}
+.award-item + .award-item { border-top: 1px solid var(--hairline); }
+.award-year {
+  font-family: var(--mono);
+  font-size: 0.85rem;
+  color: var(--accent);
+  letter-spacing: 0.04em;
+  white-space: nowrap;
+}
+.award-text {
+  font-size: 0.98rem;
+  color: var(--ink);
+}
+
+@media (max-width: 520px) {
+  .award-item { grid-template-columns: 1fr; row-gap: 0.1em; }
+}
+
+/* ------------------------------------------------------------------
+   Contact
+   ------------------------------------------------------------------ */
+.contact dl {
+  display: grid;
+  grid-template-columns: 6rem 1fr;
+  column-gap: 1.6em;
+  row-gap: 0.9em;
+  max-width: var(--measure);
+}
+.contact dt {
+  font-family: var(--mono);
+  font-size: 0.74rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+  align-self: baseline;
+  padding-top: 0.2em;
+}
+.contact dd { margin: 0; line-height: 1.65; }
+.email {
+  font-family: var(--mono);
+  font-size: 0.95rem;
+  user-select: all;
+  color: var(--ink);
+}
+.map-link {
+  display: inline-block;
+  margin-left: 0.6em;
+  font-family: var(--mono);
+  font-size: 0.78rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  white-space: nowrap;
+  color: var(--accent);
+  text-decoration: none;
+  border-bottom: 1px solid color-mix(in srgb, var(--accent) 50%, transparent);
+  padding-bottom: 1px;
+}
+.map-link:hover {
+  color: var(--ink);
+  border-color: var(--ink);
+}
+
+@media (max-width: 520px) {
+  .contact dl { grid-template-columns: 1fr; row-gap: 0.2em; }
+  .contact dt { margin-top: 0.6em; }
+  .contact dt:first-child { margin-top: 0; }
+}
+
+/* ------------------------------------------------------------------
+   Responsive
+   ------------------------------------------------------------------ */
+@media (max-width: 520px) {
+  body { padding-top: 24px; padding-bottom: 64px; }
+  .page { padding: 0 22px; }
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    transition-duration: 0ms !important;
+    animation-duration: 0ms !important;
+  }
+}
