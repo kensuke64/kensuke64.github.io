@@ -304,10 +304,36 @@ a:focus-visible {
 /* ------------------------------------------------------------------
    About
    ------------------------------------------------------------------ */
-.about p { font-size: 1.02rem; line-height: 1.75; }
+.about p {
+  font-size: 1.02rem;
+  line-height: 1.75;
+  text-align: justify;
+  hyphens: auto;
+  -webkit-hyphens: auto;
+}
 .about .acknowledgment {
   font-size: 0.92rem;
   color: var(--ink-soft);
+}
+
+/* ------------------------------------------------------------------
+   Paper button — inline marginal link to a working paper
+   ------------------------------------------------------------------ */
+.paper-button {
+  font-family: var(--mono);
+  font-size: 0.78rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--accent);
+  text-decoration: none;
+  border-bottom: 1px solid color-mix(in srgb, var(--accent) 45%, transparent);
+  padding-bottom: 2px;
+  white-space: nowrap;
+  margin-left: 0.4em;
+}
+.paper-button:hover {
+  color: var(--ink);
+  border-color: var(--ink);
 }
 
 /* ------------------------------------------------------------------
