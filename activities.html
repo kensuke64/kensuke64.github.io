@@ -32,30 +32,6 @@
     <div id="events-container"></div>
 
     <ol class="misc-list" id="events-source">
-      <li class="misc-item" data-date="2026-11-28">
-        <img src="images/logo.png" alt="Personnel Economics Workshop" class="misc-photo" style="background: var(--bg); object-fit: contain; filter: none; transform: scale(1.15);">
-        <div class="misc-text">
-          <h3 class="paper-title">Personnel Economics Workshop</h3>
-          <p class="paper-meta">Waseda University, Tokyo, Japan. November 28, 2026.</p>
-          <p class="paper-meta">Presenting: TBA <a href="#">[Link]</a></p>
-        </div>
-      </li>
-      <li class="misc-item" data-date="2026-09-01">
-        <img src="images/img-jlec.svg" alt="JLEC 2026" class="misc-photo">
-        <div class="misc-text">
-          <h3 class="paper-title">Japan Labor Economics Conference 2026</h3>
-          <p class="paper-meta">XX University, Tokyo, Japan. September DD, 2026.</p>
-          <p class="paper-meta"><em>Scaling the Heights at Work: Evidence on the Height Premium in the Internal Labor Market</em> (poster). <a href="#">[Link]</a></p>
-        </div>
-      </li>
-      <li class="misc-item" data-date="2026-12-10">
-        <img src="images/img-aasle.png" alt="AASLE 2026" class="misc-photo" style="background: var(--bg); object-fit: contain; filter: none; transform: scale(1.15);">
-        <div class="misc-text">
-          <h3 class="paper-title">AASLE Conference 2026</h3>
-          <p class="paper-meta">Peking University, Beijing, China. December 10&ndash;12, 2026.</p>
-          <p class="paper-meta"><em>Scaling the Heights at Work: Evidence on the Height Premium in the Internal Labor Market</em>. <a href="#">[Link]</a></p>
-        </div>
-      </li>
     </ol>
 
     <details class="other-section">
@@ -109,18 +85,16 @@
 
     upcoming.sort(function (a, b) { return a.date - b.date; });
 
-    if (upcoming.length > 0) {
-      var section = document.createElement('section');
-      var h2 = document.createElement('h2');
-      h2.className = 'label';
-      h2.textContent = 'Upcoming';
-      section.appendChild(h2);
-      var ol = document.createElement('ol');
-      ol.className = 'misc-list';
-      upcoming.forEach(function (u) { ol.appendChild(u.el); });
-      section.appendChild(ol);
-      container.appendChild(section);
-    }
+    var section = document.createElement('section');
+    var h2 = document.createElement('h2');
+    h2.className = 'label';
+    h2.textContent = 'Upcoming';
+    section.appendChild(h2);
+    var ol = document.createElement('ol');
+    ol.className = 'misc-list';
+    upcoming.forEach(function (u) { ol.appendChild(u.el); });
+    section.appendChild(ol);
+    container.appendChild(section);
 
     var years = Object.keys(byYear).sort(function (a, b) { return b - a; });
     years.forEach(function (y) {
