@@ -118,7 +118,38 @@ a:focus-visible {
 .site-nav .dateline .accent { color: var(--accent); }
 .site-nav ul {
   display: flex;
+  flex-wrap: nowrap;
   gap: 1.8em;
+}
+
+/* Overflow ("⋯") fold for the nav */
+.nav-more { position: relative; display: flex; align-items: center; }
+.nav-more details > summary {
+  list-style: none;
+  cursor: pointer;
+  font-family: var(--mono);
+  font-size: 0.9rem;
+  letter-spacing: 0.1em;
+  color: var(--ink-soft);
+  padding: 0 0.2em;
+  line-height: 1;
+}
+.nav-more details > summary::-webkit-details-marker { display: none; }
+.nav-more details[open] > summary { color: var(--accent); }
+.nav-more-panel {
+  position: absolute;
+  right: 0;
+  top: calc(100% + 0.8em);
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+  margin: 0;
+  padding: 1em 1.2em;
+  background: var(--bg);
+  border: 1px solid var(--rule);
+  box-shadow: 0 10px 30px rgba(20, 23, 28, 0.12);
+  z-index: 50;
+  white-space: nowrap;
 }
 .site-nav a {
   font-family: var(--mono);
@@ -135,8 +166,10 @@ a:focus-visible {
 }
 
 @media (max-width: 520px) {
-  .site-nav { flex-direction: column; gap: 1.2em; }
-  .site-nav ul { flex-wrap: wrap; gap: 1.1em; }
+  /* Single row: hide the dateline to give the menu the full width; fold overflow under "⋯". */
+  .site-nav { gap: 1em; }
+  .site-nav .dateline { display: none; }
+  .site-nav ul { flex: 1 1 auto; min-width: 0; overflow: hidden; gap: 1.1em; }
 }
 
 /* ------------------------------------------------------------------
