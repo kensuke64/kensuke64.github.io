@@ -43,7 +43,7 @@
 
 /* Reset */
 *, *::before, *::after { box-sizing: border-box; }
-html { -webkit-text-size-adjust: 100%; font-size: 106.25%; }
+html { -webkit-text-size-adjust: 100%; font-size: 106.25%; overflow-x: hidden; }
 body, h1, h2, h3, p, ol, ul, dl, dd, figure { margin: 0; }
 ol, ul { padding: 0; list-style: none; }
 
@@ -446,9 +446,11 @@ a:focus-visible {
 .misc-text { min-width: 0; }
 
 @media (max-width: 520px) {
-  .misc-item { grid-template-columns: 1fr; gap: 0.9em; }
-  .misc-photo { width: 100%; height: auto; aspect-ratio: 7 / 5; }
-  .misc-photo[src$=".svg"] { aspect-ratio: 7 / 5; }
+  /* Keep a compact, uniform logo box beside the text (no full-width blow-up). */
+  .misc-item { grid-template-columns: 84px 1fr; gap: 1.1em; align-items: start; }
+  /* Fixed box for every item so widths line up; drop inline scale() to avoid overflow. */
+  .misc-photo { width: 84px; height: 60px; aspect-ratio: auto; transform: none !important; }
+  .misc-photo[src$=".svg"] { aspect-ratio: auto; padding: 6px; }
 }
 
 /* ------------------------------------------------------------------
