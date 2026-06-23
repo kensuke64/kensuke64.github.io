@@ -171,7 +171,8 @@ a:focus-visible {
   /* Single row: hide the dateline to give the menu the full width; fold overflow under "⋯". */
   .site-nav { gap: 1em; }
   .site-nav .dateline { display: none; }
-  .site-nav ul { flex: 1 1 auto; min-width: 0; overflow: hidden; gap: 1.1em; }
+  /* No overflow:hidden here — it would clip the "⋯" dropdown panel. */
+  .site-nav ul { flex: 1 1 auto; min-width: 0; gap: 1.1em; }
 }
 
 /* ------------------------------------------------------------------
