@@ -78,6 +78,8 @@ p + p { margin-top: 1em; }
 }
 main { max-width: var(--measure); }
 section + section { margin-top: var(--gap-section); }
+/* Tighter gap above Upcoming Talks on the home page */
+#home-upcoming { margin-top: calc(var(--gap-section) * 0.5); }
 
 /* Links */
 a {
