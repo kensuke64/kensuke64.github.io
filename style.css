@@ -480,6 +480,8 @@ a:focus-visible {
   font-weight: 600;
 }
 .misc-text { min-width: 0; }
+/* Items without a photo span the full width (no empty image column). */
+.misc-item.no-photo { grid-template-columns: 1fr; }
 
 @media (max-width: 520px) {
   /* Keep a compact, uniform logo box beside the text (no full-width blow-up). */
