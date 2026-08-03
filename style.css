@@ -1,12 +1,13 @@
 /* ------------------------------------------------------------------
    Kensuke Sawada — alt edition "Drama"
    岸辺露伴(NHK ドラマ版)的美術。暖色グラファイト紙、朱の挿し色、
-   SF Pro Display 800、モノスペースのメタ情報、モノクロ強コントラストの写真。
-   非対称タイトルカード組版。
+   モノクロ強コントラストの写真、非対称タイトルカード組版。
+   タイポグラフィは keiikegami.github.io 参照：system-ui サンセリフ、
+   等幅は不使用、字間 normal 寄り、本文 17px / 行間 1.7、見出し 600。
    ------------------------------------------------------------------ */
 
 :root {
-  --bg:           #F4F5F7;        /* cool gray-white — 新聞/写真集 */
+  --bg:           #FFFFFF;        /* white */
   --bg-tint:      #EBEDF0;        /* やや沈めた寒色オフホワイト */
   --ink:          #14171C;        /* cool near-black */
   --ink-soft:     #5C636E;
@@ -19,13 +20,14 @@
   --accent-tint:  rgba(122, 46, 42, 0.10);
   --gold:         #C4A542;        /* secondary mustard(未使用) */
 
-  --sans:         -apple-system, BlinkMacSystemFont, "SF Pro Display",
-                  "SF Pro Text", "Helvetica Neue", system-ui, sans-serif;
+  --sans:         system-ui, -apple-system, "Segoe UI", Roboto,
+                  "Helvetica Neue", "Noto Sans", "Hiragino Sans",
+                  "Hiragino Kaku Gothic ProN", "Yu Gothic", "Meiryo",
+                  "Liberation Sans", Arial, sans-serif;
   --sans-jp:      "Hiragino Sans", "Hiragino Kaku Gothic ProN",
                   "Yu Gothic", "Meiryo", sans-serif;
-  --mono:         ui-monospace, "SF Mono", "JetBrains Mono",
-                  "IBM Plex Mono", Menlo, Consolas, monospace;
-  --font-body:    var(--sans), var(--sans-jp);
+  --mono:         var(--sans); /* keiikegami-style: no monospace anywhere */
+  --font-body:    var(--sans);
 
   --measure:      780px;
   --max-page:     1280px;
@@ -51,11 +53,11 @@ body {
   font-family: var(--font-body);
   font-weight: 400;
   font-size: 1rem;
-  line-height: 1.6;
+  line-height: 1.7;
   color: var(--ink);
   background: var(--bg);
 
-  font-feature-settings: "kern" 1, "liga" 1, "calt" 1, "ss01" 1;
+  font-feature-settings: "kern" 1, "liga" 1, "calt" 1;
   font-optical-sizing: auto;
   font-synthesis: none;
   text-rendering: geometricPrecision;
@@ -113,7 +115,7 @@ a:focus-visible {
 .site-nav .dateline {
   font-family: var(--mono);
   font-size: 0.74rem;
-  letter-spacing: 0.14em;
+  letter-spacing: 0.06em;
   text-transform: uppercase;
   color: var(--ink-soft);
 }
@@ -156,7 +158,7 @@ a:focus-visible {
 .site-nav a {
   font-family: var(--mono);
   font-size: 0.74rem;
-  letter-spacing: 0.14em;
+  letter-spacing: 0.06em;
   text-transform: uppercase;
   color: var(--ink-soft);
   text-decoration: none;
@@ -203,7 +205,7 @@ a:focus-visible {
   font-weight: 600;
   font-size: clamp(2.6rem, 6vw, 4rem);
   line-height: 1.0;
-  letter-spacing: -0.03em;
+  letter-spacing: normal;
   color: var(--ink);
 }
 .title-card h1 .surname {
@@ -245,7 +247,7 @@ a:focus-visible {
   font-size: 1.02rem;
   color: var(--ink-soft);
   line-height: 1.75;
-  letter-spacing: -0.005em;
+  letter-spacing: normal;
   max-width: none;
   padding-top: 0.4em;
 }
@@ -271,7 +273,7 @@ a:focus-visible {
   gap: 1em;
   font-family: var(--mono);
   font-size: 0.75rem;
-  letter-spacing: 0.18em;
+  letter-spacing: 0.08em;
   text-transform: uppercase;
   color: var(--ink-soft);
   margin-bottom: 1.8em;
@@ -312,7 +314,7 @@ a:focus-visible {
   font-weight: 600;
   font-size: clamp(2.6rem, 6vw, 4rem);
   line-height: 1.0;
-  letter-spacing: -0.03em;
+  letter-spacing: normal;
   color: var(--ink);
   text-wrap: balance;
 }
@@ -382,10 +384,10 @@ a:focus-visible {
 }
 .paper-title {
   font-family: var(--sans);
-  font-weight: 700;
+  font-weight: 600;
   font-size: 1.35rem;
   line-height: 1.25;
-  letter-spacing: -0.018em;
+  letter-spacing: normal;
   color: var(--ink);
   text-wrap: pretty;
   margin: 0;
@@ -420,7 +422,7 @@ a:focus-visible {
   list-style: none;
   font-family: var(--mono);
   font-size: 0.74rem;
-  letter-spacing: 0.16em;
+  letter-spacing: 0.08em;
   text-transform: uppercase;
   color: var(--ink-soft);
   display: inline-flex;
@@ -558,7 +560,7 @@ details summary.label:hover::before { color: var(--accent-press); }
 .contact dt {
   font-family: var(--mono);
   font-size: 0.74rem;
-  letter-spacing: 0.16em;
+  letter-spacing: 0.08em;
   text-transform: uppercase;
   color: var(--ink-soft);
   align-self: baseline;

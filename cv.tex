@@ -1,0 +1,256 @@
+%-------------------------
+% Resume in Latex
+% Author : Jake Gutierrez
+% Based off of: https://github.com/sb2nov/resume
+% License : MIT
+%------------------------
+
+\documentclass[letterpaper,11pt]{article}
+
+\usepackage{latexsym}
+\usepackage[T1]{fontenc}
+\usepackage[empty]{fullpage}
+\usepackage{titlesec}
+\usepackage{marvosym}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{verbatim}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+\usepackage{fancyhdr}
+\usepackage[english]{babel}
+\usepackage{tabularx}
+\usepackage{ifthen}
+\input{glyphtounicode}
+
+
+%----------FONT OPTIONS----------
+% sans-serif
+% \usepackage[sfdefault]{FiraSans}
+% \usepackage[sfdefault]{roboto}
+% \usepackage[sfdefault]{noto-sans}
+% \usepackage[default]{sourcesanspro}
+
+% serif
+% \usepackage{CormorantGaramond}
+% \usepackage{charter}
+
+
+\pagestyle{fancy}
+\fancyhf{} % clear all header and footer fields
+\fancyfoot{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+% Adjust margins
+\addtolength{\oddsidemargin}{-0.5in}
+\addtolength{\evensidemargin}{-0.5in}
+\addtolength{\textwidth}{1in}
+\addtolength{\topmargin}{-.5in}
+\addtolength{\textheight}{1.0in}
+
+\urlstyle{same}
+
+\raggedbottom
+\raggedright
+\setlength{\tabcolsep}{0in}
+
+% Sections formatting
+\titleformat{\section}{
+  \vspace{-4pt}\scshape\raggedright\large
+}{}{0em}{}[\color{black}\titlerule \vspace{-5pt}]
+
+% Ensure that generate pdf is machine readable/ATS parsable
+\pdfgentounicode=1
+
+%-------------------------
+% Custom commands
+\newcommand{\resumeItem}[1]{
+  \item\small{
+    {#1 \vspace{-2pt}}
+  }
+}
+
+\newcommand{\resumeSubheading}[4]{
+  \vspace{-2pt}\item
+    \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \expandafter#1 & #2 \\
+      {\small#3} & {\small #4} \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeSubSubheading}[2]{
+    \item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      {\small#1} & {\small #2} \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeProjectHeading}[2]{
+    \item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \small#1 & #2 \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeSubItem}[1]{\resumeItem{#1}\vspace{-4pt}}
+
+\renewcommand\labelitemii{$\vcenter{\hbox{\tiny$\bullet$}}$}
+
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0.15in, label={}]}
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
+\newcommand{\resumeItemListStart}{\begin{itemize}}
+\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-5pt}}
+\newcommand{\resumePublication}[1]{
+  \item\small{
+    #1 \vspace{-2pt}
+  }
+}
+\newcommand{\resumeConferencePresentation}[2]{
+  \item\small{
+    \textbf{#1}: #2 \vspace{-2pt}
+  }
+}
+
+%-------------------------------------------
+%%%%%%  RESUME STARTS HERE  %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\begin{document}
+
+%----------HEADING----------
+\begin{center}
+    \textbf{\huge \scshape Kensuke Sawada}
+\end{center}
+
+\begin{center}
+\href{mailto:sawada19171206@moegi.waseda.jp}{\underline{sawada19171206@moegi.waseda.jp}}
+\end{center}
+
+%-----------EDUCATION-----------
+\section{Education}
+  \resumeSubHeadingListStart
+    \resumeSubheading
+      {\textbf{Waseda University}}{Tokyo, Japan}
+      {Master of Arts in Economics}{Sep. 2025 -- Present}
+    \resumeSubSubheading
+      {Bachelor of Arts in Social Sciences}{Apr. 2021 -- Sep. 2025}
+    \resumeSubheading
+      {\textbf{University of North Carolina at Chapel Hill}}{Chapel Hill, NC}
+      {Exchange Program}{Aug. 2024 -- May 2025}
+  \resumeSubHeadingListEnd
+
+%-----------RESEARCH INTERESTS-----------
+\section{Research Interests}
+    \hspace{7pt}
+    Personnel Economics, Organizational Economics, Labor Economics
+
+%-----------Publications-----------
+% \section{Publications}
+%     \resumeSubHeadingListStart
+%       \resumePublication{Leaders in Social Movements: Evidence from Unions in Myanmar (with Laura Boudreau, Rocco Macchiavello, and Mari Tanaka). \textbf{American Economic Review} (2025), 115(6): 1975--2000.}
+%     \resumeSubHeadingListEnd
+
+%-----------Working Papers-----------
+\section{Working Papers}
+    \resumeSubHeadingListStart
+      \resumePublication{The Daughter Effect in Politics: Evidence from Japanese National Legislators (with Taketo Hara, Ritsu Kitagawa, and Takeru Sone)}
+    \resumeSubHeadingListEnd
+
+%-----------Work in Progress-----------
+\section{Work in Progress}
+    \resumeSubHeadingListStart
+      \resumePublication{Generative AI at Managerial Work (with Ritsu Kitagawa and Akseli Palom\"{a}ki)}
+      \resumePublication{Height Premium Inside the Firm: Evidence from Personnel Records (with Ritsu Kitagawa)}
+      \resumePublication{Promotion Hierarchies (with Guido Friebel, Hideo Owan, and Ruo Shangguan)}
+      \resumePublication{Ranking Japanese Firms Using Revealed Preference (with Ritsu Kitagawa)}
+    \resumeSubHeadingListEnd
+
+%-----------Conference Presentations (hidden for now — uncomment to show)-----------
+% \section{Presentations}
+%     \resumeSubHeadingListStart
+%       \resumeConferencePresentation{2027}{Colloquium on Personnel Economics; Japan Economic Association Spring Meeting; Japan Labor Economics Conference; Asian and Australian Society of Labour Economics (AASLE) Conference}
+%       \resumeConferencePresentation{2026}{Japan Labor Economics Conference; Japan Economic Association Fall Meeting}
+%     \resumeSubHeadingListEnd
+
+%-----------RESEARCH EXPERIENCE-----------
+\section{Research Experience}
+    \resumeSubHeadingListStart
+        \resumeSubheading
+        {\textbf{Research Assistant to Prof.\ Hideo Owan}}{Apr. 2024 -- Present}
+        {Waseda University}{Tokyo, Japan}
+        \resumeSubheading
+        {\textbf{Research Assistant}}{May 2023 -- Present}
+        {UTokyo Economic Consulting Inc.}{Tokyo, Japan}
+        % \resumeItemListStart
+        %     \resumeItem{Engaged in a project to analyze the economic policies during COVID-19 using banking data.}
+        %     \resumeItem{Cleaned and analyzed over ten years of banking transaction data, applying event studies and staggered DiD in Python to assess the economic impact of Japan's COVID-19 policies. Findings contributed to policy discussions and reports.}
+        %     \resumeItem{Conducted individual reviews of over ten recent empirical microeconomics papers, summarizing their background, data, analytical methods, key findings, and policy implications, as part of EBPM training materials for government officials.}
+        % \resumeItemListEnd
+  \resumeSubHeadingListEnd
+
+%-----------Non-Academic-----------
+% \section{Non-Academic Experience}
+%     \resumeSubHeadingListStart
+%     \resumeSubheading
+%       {\textbf{Data Science Intern}, Data Chemistry Inc.}{Oct. 2022 -- Feb. 2023}
+%       {}{}
+%     \resumeItemListStart
+%         \resumeItem{Built interactive Tableau dashboards to visualize advertising performance, leveraging SQL and Python to process hundreds of millions of records from TV viewing and website data. Applied clustering algorithms to segment visitors, enhancing marketing strategy decisions.}
+%         \resumeItem{Contributed to the development of new advertising analytics products by integrating website visitor data with survey responses using SQL and creating Tableau dashboards for visitor profiling.}
+%     \resumeItemListEnd
+%     \resumeSubHeadingListEnd
+
+%-----------Teaching Experience-----------
+\section{Teaching Experience}
+    \resumeSubHeadingListStart
+    \resumeSubheading
+      {\textbf{Teaching Assistant}}{}
+      {Introduction to HR Data Analytics with R and Python, Waseda University}{Apr. 2024 -- Present}
+    \resumeSubSubheading
+      {Regression Analysis for Social Sciences I, Waseda University}{Apr. -- Jul. 2023}
+    \resumeSubSubheading
+      {Regression Analysis for Social Sciences II, Waseda University}{Apr. -- Jul. 2023}
+  \resumeSubHeadingListEnd
+
+%-----------Honors and Awards-----------
+\section{Honors and Awards}
+    \resumeSubHeadingListStart
+    \resumeSubheading
+      {\textbf{Okuma Memorial Scholarship}}{2026}
+      {Waseda University}{Tokyo, Japan}
+    \resumeSubheading
+      {\textbf{Dean's List}}{2025}
+      {University of North Carolina at Chapel Hill}{Chapel Hill, NC}
+    \resumeSubheading
+      {\textbf{Dean's List}}{2023, 2024}
+      {Waseda University, School of Social Sciences}{Tokyo, Japan}
+    % \resumeSubheading
+    %   {\textbf{Grants for Study Abroad}}{Spr. 2024 -- Apr. 2025}
+    %   {Gyomu Super Japan Dream Foundation}{Hyogo, Japan}
+    % \resumeSubheading
+    %   {\textbf{Merit Scholarships}}{}{}{}
+    %   \resumeItemListStart
+    %     \resumeItem{Tatsuno Environmental Foundation \hfill Apr. 2023 -- Mar. 2025}
+    %     \resumeItem{ASJ Foundation \hfill Apr. 2023 -- Jun. 2024}
+    %     \resumeItem{Able Foundation \hfill Apr. 2023 -- Mar. 2024}
+    %     \resumeItem{Keyence Foundation \hfill AY2023}
+    %     \resumeItem{Waseda University \hfill Apr. 2021 -- Mar. 2025}
+    %     \resumeItem{Ashinaga Foundation \hfill Apr. 2021 -- Mar. 2025}
+    %     \resumeItem{Japan Student Service Organization \hfill Apr. 2021 -- Mar. 2025}
+    %   \resumeItemListEnd
+    \resumeSubHeadingListEnd
+
+%-----------SKILLS-----------
+\section{Skills}
+ \begin{itemize}[leftmargin=0.15in, label={}]
+    \small{\item{
+    \textbf{Languages}{: English (Fluent), Japanese (Native)} \\
+    \vspace{1mm}
+    \textbf{Programming}{: Python, R, SQL, C/C++} \\
+    % \vspace{1mm}
+    % \textbf{Software}{: BigQuery, Git, Tableau} \\
+    }}
+ \end{itemize}
+
+
+\end{document}

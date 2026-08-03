@@ -1,1 +1,6 @@
 .DS_Store
+
+# CV: keep the LaTeX source (cv.tex) and the served copy (assets/cv.pdf);
+# ignore the raw upload and the root build output.
+cv.zip
+/cv.pdf
