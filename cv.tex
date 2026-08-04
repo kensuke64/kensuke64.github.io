@@ -56,7 +56,7 @@
 
 % Sections formatting
 \titleformat{\section}{
-  \vspace{-4pt}\scshape\raggedright\large
+  \vspace{-4pt}\scshape\raggedright\large\bfseries
 }{}{0em}{}[\color{black}\titlerule \vspace{-5pt}]
 
 % Ensure that generate pdf is machine readable/ATS parsable
@@ -73,7 +73,7 @@
 \newcommand{\resumeSubheading}[4]{
   \vspace{-2pt}\item
     \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
-      \expandafter#1 & #2 \\
+      \expandafter#1 & {\small #2} \\
       {\small#3} & {\small #4} \\
     \end{tabular*}\vspace{-7pt}
 }
@@ -165,11 +165,11 @@
 %       \resumePublication{Ranking Japanese Firms Using Revealed Preference (with Ritsu Kitagawa)}
 %     \resumeSubHeadingListEnd
 
-%-----------Conference Presentations-----------
-\section{Presentations}
-    \resumeSubHeadingListStart
-      \resumeConferencePresentation{2026}{Okinawa University, Waseda University}
-    \resumeSubHeadingListEnd
+%-----------Conference Presentations (hidden for now — uncomment to show)-----------
+% \section{Presentations}
+%     \resumeSubHeadingListStart
+%       \resumeConferencePresentation{2026}{Okinawa University, Waseda University}
+%     \resumeSubHeadingListEnd
 
 %-----------RESEARCH EXPERIENCE-----------
 \section{Research Experience}
