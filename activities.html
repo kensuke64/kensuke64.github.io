@@ -108,16 +108,18 @@
 
     upcoming.sort(function (a, b) { return a.date - b.date; });
 
-    var section = document.createElement('section');
-    var h2 = document.createElement('h2');
-    h2.className = 'label';
-    h2.textContent = 'Upcoming';
-    section.appendChild(h2);
-    var ol = document.createElement('ol');
-    ol.className = 'misc-list';
-    upcoming.forEach(function (u) { ol.appendChild(u.el); });
-    section.appendChild(ol);
-    container.appendChild(section);
+    if (upcoming.length) {
+      var section = document.createElement('section');
+      var h2 = document.createElement('h2');
+      h2.className = 'label';
+      h2.textContent = 'Upcoming';
+      section.appendChild(h2);
+      var ol = document.createElement('ol');
+      ol.className = 'misc-list';
+      upcoming.forEach(function (u) { ol.appendChild(u.el); });
+      section.appendChild(ol);
+      container.appendChild(section);
+    }
 
     var years = Object.keys(byYear).sort(function (a, b) { return b - a; });
     years.forEach(function (y) {
