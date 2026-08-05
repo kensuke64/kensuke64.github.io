@@ -4,3 +4,6 @@
 # ignore the raw upload and the root build output.
 cv.zip
 /cv.pdf
+/cv.aux
+/cv.log
+/cv.out
