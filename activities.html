@@ -122,10 +122,11 @@
     }
 
     var years = Object.keys(byYear).sort(function (a, b) { return b - a; });
-    years.forEach(function (y) {
+    years.forEach(function (y, i) {
       var list = byYear[y];
       list.sort(function (a, b) { return b.date - a.date; });
       var details = document.createElement('details');
+      if (i === 0) details.open = true; // keep the most recent year expanded
       var summary = document.createElement('summary');
       summary.className = 'label';
       summary.textContent = y;
