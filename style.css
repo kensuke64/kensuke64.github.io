@@ -260,8 +260,6 @@ a:focus-visible {
 #home-next .label { margin-bottom: 1.2em; }
 #home-next .misc-list .paper-title { font-size: 1rem; }
 #home-next .paper-meta { font-size: 0.88rem; margin-top: 0.45em; }
-.next-more { margin-top: 1.1em; }
-.next-more .map-link { margin-left: 0; }
 
 @media (max-width: 640px) {
   .title-card-body { grid-template-columns: 140px 1fr; gap: 24px; }
