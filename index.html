@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Kensuke Sawada</title>
 <meta name="description" content="Kensuke Sawada — Master's student in Economics, Waseda University.">
-<link rel="stylesheet" href="style.css?v=20260729a">
+<link rel="stylesheet" href="style.css?v=20260809a">
 </head>
 <body>
 
@@ -32,10 +32,18 @@
           <img src="images/photo.jpg" srcset="images/photo.jpg 1x, images/photo@2x.jpg 2x" alt="Kensuke Sawada">
           <figcaption>Raleigh, NC &middot; Dec 2024</figcaption>
         </figure>
-        <p class="affiliation">
-          Master&rsquo;s Student in Economics, Waseda University<br>
-          Research Assistant, Institute for Empirical Research in Organizational Economics
-        </p>
+        <div class="title-card-main">
+          <p class="affiliation">
+            Master&rsquo;s Student in Economics, Waseda University<br>
+            Research Assistant, Institute for Empirical Research in Organizational Economics
+          </p>
+
+          <section id="home-next" hidden>
+            <h2 class="label">Next</h2>
+            <ol class="misc-list" id="home-next-list"></ol>
+            <p class="next-more"><a class="map-link" href="activities.html">All activities &rarr;</a></p>
+          </section>
+        </div>
       </div>
     </header>
 
@@ -44,11 +52,6 @@
       <p>I am a first-year master&rsquo;s student in economics at Waseda University. Before starting my master&rsquo;s, I obtained a B.A. in Social Sciences from Waseda University, with a year on exchange at the University of North Carolina at Chapel Hill.</p>
       <p>My research interests lie in personnel economics and organizational economics. I study how managers, information, and AI-based technologies shape workers&rsquo; careers and organizational outcomes inside firms.</p>
       <p>I co-organize the <a href="https://sites.google.com/view/peworkshop/home" target="_blank" rel="noopener">Personnel Economics Workshop</a>, a monthly seminar series held on the fourth Saturday of each month at Waseda University.</p>
-    </section>
-
-    <section id="home-upcoming" hidden>
-      <h2 class="label">Upcoming Talks</h2>
-      <ol class="misc-list" id="home-upcoming-list"></ol>
     </section>
 
     <section class="contact">
@@ -70,7 +73,7 @@
 </div>
 
 <script>
-  /* Pull the "Upcoming" events from activities.html (single source of truth). */
+  /* Show the single next talk, pulled from activities.html (single source of truth). */
   (function () {
     fetch('activities.html', { cache: 'no-store' })
       .then(function (r) { return r.text(); })
@@ -89,9 +92,9 @@
 
         if (!upcoming.length) return;
 
-        var list = document.getElementById('home-upcoming-list');
-        upcoming.forEach(function (u) { list.appendChild(document.importNode(u.el, true)); });
-        document.getElementById('home-upcoming').hidden = false;
+        var list = document.getElementById('home-next-list');
+        list.appendChild(document.importNode(upcoming[0].el, true));
+        document.getElementById('home-next').hidden = false;
       })
       .catch(function () { /* keep section hidden on failure */ });
   })();

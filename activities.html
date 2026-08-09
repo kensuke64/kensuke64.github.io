@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Kensuke Sawada / Activities</title>
 <meta name="description" content="Activities — Kensuke Sawada.">
-<link rel="stylesheet" href="style.css?v=20260729a">
+<link rel="stylesheet" href="style.css?v=20260809a">
 </head>
 <body>
 
@@ -92,51 +92,71 @@
     today.setHours(0, 0, 0, 0);
 
     var upcoming = [];
-    var byYear = {};
+    var past = [];
 
     items.forEach(function (item) {
       var dateStr = item.getAttribute('data-date');
       var date = new Date(dateStr + 'T00:00:00');
-      if (date >= today) {
-        upcoming.push({ date: date, el: item });
-      } else {
-        var y = date.getFullYear().toString();
-        if (!byYear[y]) byYear[y] = [];
-        byYear[y].push({ date: date, el: item });
-      }
+      (date >= today ? upcoming : past).push({ date: date, el: item });
     });
 
     upcoming.sort(function (a, b) { return a.date - b.date; });
+    past.sort(function (a, b) { return b.date - a.date; });
 
-    if (upcoming.length) {
+    /* Top-level headings are plain sections; only the year groups fold. */
+    function makeSection(title) {
       var section = document.createElement('section');
       var h2 = document.createElement('h2');
       h2.className = 'label';
-      h2.textContent = 'Upcoming';
+      h2.textContent = title;
       section.appendChild(h2);
-      var ol = document.createElement('ol');
-      ol.className = 'misc-list';
-      upcoming.forEach(function (u) { ol.appendChild(u.el); });
-      section.appendChild(ol);
-      container.appendChild(section);
+      return section;
     }
 
-    var years = Object.keys(byYear).sort(function (a, b) { return b - a; });
-    years.forEach(function (y, i) {
-      var list = byYear[y];
-      list.sort(function (a, b) { return b.date - a.date; });
+    function makeYearGroup(year, open) {
       var details = document.createElement('details');
-      if (i === 0) details.open = true; // keep the most recent year expanded
+      details.className = 'year-group';
+      details.open = open;
       var summary = document.createElement('summary');
-      summary.className = 'label';
-      summary.textContent = y;
+      summary.className = 'label year-label';
+      summary.textContent = year;
       details.appendChild(summary);
+      return details;
+    }
+
+    function makeList(entries) {
       var ol = document.createElement('ol');
       ol.className = 'misc-list';
-      list.forEach(function (item) { ol.appendChild(item.el); });
-      details.appendChild(ol);
-      container.appendChild(details);
-    });
+      entries.forEach(function (e) { ol.appendChild(e.el); });
+      return ol;
+    }
+
+    if (upcoming.length) {
+      var up = makeSection('Upcoming');
+      up.appendChild(makeList(upcoming));
+      container.appendChild(up);
+    }
+
+    if (past.length) {
+      var academic = makeSection('Academic');
+
+      /* Past talks are grouped by year; the most recent year stays expanded. */
+      var byYear = {};
+      past.forEach(function (p) {
+        var y = p.date.getFullYear().toString();
+        (byYear[y] || (byYear[y] = [])).push(p);
+      });
+
+      Object.keys(byYear)
+        .sort(function (a, b) { return b - a; })
+        .forEach(function (y, i) {
+          var group = makeYearGroup(y, i === 0);
+          group.appendChild(makeList(byYear[y]));
+          academic.appendChild(group);
+        });
+
+      container.appendChild(academic);
+    }
 
     source.style.display = 'none';
   })();

@@ -80,8 +80,6 @@ p + p { margin-top: 1em; }
 }
 main { max-width: var(--measure); }
 section + section { margin-top: var(--gap-section); }
-/* Tighter gap above Upcoming Talks on the home page */
-#home-upcoming { margin-top: calc(var(--gap-section) * 0.5); }
 
 /* Links */
 a {
@@ -255,6 +253,15 @@ a:focus-visible {
   color: var(--ink);
   font-weight: 500;
 }
+
+/* "Next" — the single next talk, beside the portrait under the affiliation. */
+.title-card-main { min-width: 0; }
+#home-next { margin-top: clamp(28px, 3.4vw, 42px); }
+#home-next .label { margin-bottom: 1.2em; }
+#home-next .misc-list .paper-title { font-size: 1rem; }
+#home-next .paper-meta { font-size: 0.88rem; margin-top: 0.45em; }
+.next-more { margin-top: 1.1em; }
+.next-more .map-link { margin-left: 0; }
 
 @media (max-width: 640px) {
   .title-card-body { grid-template-columns: 140px 1fr; gap: 24px; }
@@ -513,11 +520,19 @@ details > summary.label::before {
   transition: color 200ms var(--ease);
 }
 details[open] > summary.label::before { content: "[−]"; }
-details[open] summary.label { color: var(--ink); }
+details[open] > summary.label { color: var(--ink); }
 details summary.label:hover { color: var(--ink); }
 details summary.label:hover::before { color: var(--accent-press); }
 
 .other-section { margin-top: calc(var(--gap-section) * 1.2); }
+
+/* Year subgroups nested inside a section (Activities → Academic).
+   Subordinate to the section label: short rule, tighter rhythm. */
+.year-group + .year-group { margin-top: calc(var(--gap-section) * 0.55); }
+.year-label { margin-bottom: 1.4em; }
+.year-label::after { flex: 0 0 2.5em; }
+/* A collapsed year is just its heading — no trailing space under it. */
+.year-group:not([open]) > .year-label { margin-bottom: 0; }
 
 /* ------------------------------------------------------------------
    Awards
