@@ -1,91 +1,131 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Kensuke Sawada / Activities</title>
 <meta name="description" content="Activities — Kensuke Sawada.">
-<link rel="stylesheet" href="style.css?v=20260809a">
+<!-- head:start -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,400;0,700;1,400&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@500&text=%E2%86%97&display=swap">
+<link rel="stylesheet" href="style.css?v=20261102c">
+<!-- head:end -->
 </head>
 <body>
 
-<div class="page">
+<!-- header:start -->
+<a class="skip" href="#main">Skip to content</a>
+<header class="site-head">
+  <div class="head-in wrap">
+    <a class="logo" href="index.html">Kensuke Sawada</a>
+    <button class="menu" type="button" aria-expanded="false" aria-controls="nav">Menu</button>
+    <nav class="nav" id="nav" aria-label="Main menu">
+      <ul class="nav-main">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="cv.html">CV</a></li>
+        <li><a href="research.html">Research</a></li>
+        <li><a href="teaching.html">Teaching</a></li>
+        <li><a href="activities.html" aria-current="page">Activities</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+<!-- header:end -->
 
-  <nav class="site-nav" aria-label="Primary">
-    <p class="dateline">Updated <span class="accent" id="last-updated">2026.04</span></p>
-    <ul>
-      <li><a href="index.html">Home</a></li>
-      <li><a href="cv.html">CV</a></li>
-      <li><a href="research.html">Research</a></li>
-      <li><a href="teaching.html">Teaching</a></li>
-      <li><a href="activities.html" aria-current="page">Activities</a></li>
-    </ul>
-  </nav>
+<main id="main" tabindex="-1">
 
-  <main>
+  <div class="page-open wrap">
+    <nav class="trail" aria-label="Breadcrumb"><a href="index.html">Home</a><span class="sep" aria-hidden="true">/</span><span aria-current="page">Activities</span></nav>
+    <div class="grid">
+      <h1 class="page-title t-title">Activities</h1>
+      <p class="page-intro">Conferences, workshops, and other engagements.</p>
+    </div>
+  </div>
 
-    <header class="page-head">
-      <h1 class="page-title">Activities</h1>
-      <p class="page-lede">Conferences, workshops, and other engagements.</p>
-    </header>
+  <div id="events-container"></div>
 
-    <div id="events-container"></div>
-
-    <ol class="misc-list" id="events-source">
-      <li class="misc-item no-photo" data-date="2026-08-08" data-tag="talk">
-        <div class="misc-text">
-          <h3 class="paper-title">Personnel Economics Workshop</h3>
-          <p class="paper-meta">Waseda University, Tokyo, Japan. August 8, 2026. <a href="https://sites.google.com/view/peworkshop/home?authuser=0" target="_blank" rel="noopener">[Link]</a></p>
-          <p class="paper-meta"><em>Ranking Japanese Firms Using Revealed Preference</em>.</p>
-        </div>
-      </li>
-      <li class="misc-item no-photo" data-date="2026-08-26" data-tag="talk">
-        <div class="misc-text">
-          <h3 class="paper-title">CTW Summer Camp 2026</h3>
-          <p class="paper-meta">University of Tokyo, Tokyo, Japan, and online. August 26&ndash;28, 2026. <a href="https://sites.google.com/site/ctwcamp/program-2026?authuser=0" target="_blank" rel="noopener">[Link]</a></p>
-          <p class="paper-meta"><em>Promotion Hierarchies: The Role of Bosses&rsquo; Referrals</em>.</p>
-        </div>
-      </li>
-      <li class="misc-item no-photo" data-date="2026-12-10" data-tag="talk">
-        <div class="misc-text">
-          <h3 class="paper-title">AASLE Conference 2026</h3>
-          <p class="paper-meta">Peking University, Beijing, China. December 10&ndash;12, 2026. <a href="https://www.aasle.org/beijing2026-conference-info" target="_blank" rel="noopener">[Link]</a></p>
-          <p class="paper-meta"><em>Ranking Japanese Firms Using Revealed Preference</em>.</p>
-        </div>
-      </li>
-    </ol>
-
-    <details class="other-section">
-      <summary class="label">Non-Academic</summary>
-      <ol class="misc-list">
-        <li class="misc-item">
-          <img src="images/img-emira.jpg" alt="EMIRA Business Contest 2024" class="misc-photo">
-          <div class="misc-text">
-            <h3 class="paper-title">EMIRA Business Contest 2024</h3>
-            <p class="paper-meta">with Hikaru Kurahashi. Energy Intercollegiate Business Contest, organized by EMIRA Editorial Committee and Waseda University PEP. 2024. <a href="https://emira-t.jp/prototype/23912/">Media</a></p>
-            <p class="paper-meta"><em>Excellence Award.</em></p>
-          </div>
+  <!-- The one list of events: add a talk here. The script below sorts it into Upcoming and
+       past years by data-date, and the home page takes its Next Talk from here. -->
+  <section class="sec wrap" id="events-fallback">
+    <div class="grid">
+      <h2 class="g-l">Academic</h2>
+      <ol class="g-r rows" id="events-source">
+        <li class="event" data-date="2026-08-08" data-tag="talk">
+          <p class="r-meta"><span>August 8, 2026</span><span>Waseda University, Tokyo, Japan</span></p>
+          <h3 class="r-t"><a href="https://sites.google.com/view/peworkshop/home?authuser=0" target="_blank" rel="noopener">Personnel Economics Workshop<span class="ext" aria-hidden="true">↗</span></a></h3>
+          <p class="r-sub">Ranking Japanese Firms Using Revealed Preference</p>
         </li>
-        <li class="misc-item">
-          <img src="images/img-datachem-alpha.png" alt="Data Chemistry Inc." class="misc-photo" style="background: var(--bg); object-fit: contain; filter: none; transform: scale(1.15);">
-          <div class="misc-text">
-            <h3 class="paper-title">Data Scientist Intern, Data Chemistry Inc.</h3>
-            <p class="paper-meta">October 2022 &ndash; February 2023.</p>
-            <p class="paper-meta">Data analysis for advertising and marketing using Python and SQL; contributed to new product development.</p>
-          </div>
+        <li class="event" data-date="2026-08-26" data-tag="talk">
+          <p class="r-meta"><span>August 26&ndash;28, 2026</span><span>University of Tokyo, Tokyo, Japan, and online</span></p>
+          <h3 class="r-t"><a href="https://sites.google.com/site/ctwcamp/program-2026?authuser=0" target="_blank" rel="noopener">CTW Summer Camp 2026<span class="ext" aria-hidden="true">↗</span></a></h3>
+          <p class="r-sub">Promotion Hierarchies: The Role of Bosses&rsquo; Referrals</p>
+        </li>
+        <li class="event" data-date="2026-12-10" data-tag="talk">
+          <p class="r-meta"><span>December 10&ndash;12, 2026</span><span>Peking University, Beijing, China</span></p>
+          <h3 class="r-t"><a href="https://www.aasle.org/beijing2026-conference-info" target="_blank" rel="noopener">AASLE Conference 2026<span class="ext" aria-hidden="true">↗</span></a></h3>
+          <p class="r-sub">Ranking Japanese Firms Using Revealed Preference</p>
         </li>
       </ol>
+    </div>
+  </section>
+
+  <section class="sec wrap">
+    <details class="fold">
+      <summary><h2>Non-Academic</h2></summary>
+      <div class="grid fold-body">
+        <ol class="g-r rows rows-media">
+          <li>
+            <div class="ph r-3x2"><img src="images/img-emira.jpg" alt="EMIRA Business Contest 2024"></div>
+            <div>
+              <h3 class="r-t">EMIRA Business Contest 2024</h3>
+              <p class="r-sub">with Hikaru Kurahashi. Energy Intercollegiate Business Contest, organized by EMIRA Editorial Committee and Waseda University PEP. 2024. <a href="https://emira-t.jp/prototype/23912/">Media</a></p>
+              <p class="r-sub">Excellence Award.</p>
+            </div>
+          </li>
+          <li>
+            <div class="ph r-3x2 is-logo"><img src="images/img-datachem-alpha.png" alt="Data Chemistry Inc."></div>
+            <div>
+              <h3 class="r-t">Data Scientist Intern, Data Chemistry Inc.</h3>
+              <p class="r-sub">October 2022 &ndash; February 2023.</p>
+              <p class="r-sub">Data analysis for advertising and marketing using Python and SQL; contributed to new product development.</p>
+            </div>
+          </li>
+        </ol>
+      </div>
     </details>
+  </section>
 
-  </main>
+</main>
 
-</div>
+<!-- footer:start -->
+<footer class="site-foot">
+  <div class="foot-in wrap grid">
+    <div class="foot-id">
+      <a class="foot-name" href="index.html">Kensuke Sawada</a>
+      <p>Master&rsquo;s Student in Economics, Waseda University</p>
+      <p>Office 601B, 513 Wasedatsurumaki-cho,<br>Shinjuku-ku, Tokyo 162-0041, Japan</p>
+      <p>sawada19171206 [at] moegi.waseda.jp</p>
+    </div>
+    <nav class="foot-ext" aria-labelledby="foot-links">
+      <p class="foot-h" id="foot-links">Links</p>
+      <ul>
+        <li><a href="https://sites.google.com/view/peworkshop/home" target="_blank" rel="noopener">Personnel Economics Workshop<span class="ext" aria-hidden="true">↗</span></a></li>
+        <li><a href="https://www.waseda.jp/inst/cro/institutes-list/institute-for-empirical-research-in-organizational-economics/" target="_blank" rel="noopener">Institute for Empirical Research in Organizational Economics<span class="ext" aria-hidden="true">↗</span></a></li>
+      </ul>
+    </nav>
+    <p class="foot-copy">© Kensuke Sawada. Updated <span id="last-updated">2026.11</span>.</p>
+  </div>
+</footer>
+<!-- footer:end -->
 
 <script>
   (function () {
     var source = document.getElementById('events-source');
+    var fallback = document.getElementById('events-fallback');
     var container = document.getElementById('events-container');
-    var items = Array.from(source.querySelectorAll('.misc-item'));
+    var items = Array.from(source.querySelectorAll('.event'));
     var today = new Date();
     today.setHours(0, 0, 0, 0);
 
@@ -101,14 +141,22 @@
     upcoming.sort(function (a, b) { return a.date - b.date; });
     past.sort(function (a, b) { return b.date - a.date; });
 
-    /* Top-level headings are plain sections; only the year groups fold. */
+    /* A section on the two axes: h2 on column 1, its body on column 7. Returns the body. */
     function makeSection(title) {
       var section = document.createElement('section');
+      section.className = 'sec wrap';
+      var grid = document.createElement('div');
+      grid.className = 'grid';
       var h2 = document.createElement('h2');
-      h2.className = 'label';
+      h2.className = 'g-l';
       h2.textContent = title;
-      section.appendChild(h2);
-      return section;
+      var body = document.createElement('div');
+      body.className = 'g-r';
+      grid.appendChild(h2);
+      grid.appendChild(body);
+      section.appendChild(grid);
+      container.appendChild(section);
+      return body;
     }
 
     function makeYearGroup(year, open) {
@@ -116,7 +164,6 @@
       details.className = 'year-group';
       details.open = open;
       var summary = document.createElement('summary');
-      summary.className = 'label year-label';
       summary.textContent = year;
       details.appendChild(summary);
       return details;
@@ -124,15 +171,13 @@
 
     function makeList(entries) {
       var ol = document.createElement('ol');
-      ol.className = 'misc-list';
+      ol.className = 'rows';
       entries.forEach(function (e) { ol.appendChild(e.el); });
       return ol;
     }
 
     if (upcoming.length) {
-      var up = makeSection('Upcoming');
-      up.appendChild(makeList(upcoming));
-      container.appendChild(up);
+      makeSection('Upcoming').appendChild(makeList(upcoming));
     }
 
     if (past.length) {
@@ -152,14 +197,12 @@
           group.appendChild(makeList(byYear[y]));
           academic.appendChild(group);
         });
-
-      container.appendChild(academic);
     }
 
-    source.style.display = 'none';
+    fallback.hidden = true;
   })();
 </script>
 
-<script src="script.js?v=20260729a"></script>
+<script src="script.js?v=20261102b"></script>
 </body>
 </html>

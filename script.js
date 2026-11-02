@@ -1,58 +1,40 @@
+/* =====================================================================
+   Shared script. The menu comes from the EOE site's eoe.js.
+   1 last-updated stamp in the footer
+   2 mobile menu
+   ===================================================================== */
 (function () {
-  var el = document.getElementById('last-updated');
-  if (!el) return;
-  var d = new Date(document.lastModified);
-  if (isNaN(d.getTime())) return;
-  var yyyy = d.getFullYear();
-  var mm = String(d.getMonth() + 1).padStart(2, '0');
-  el.textContent = yyyy + '.' + mm;
-})();
+  var doc = document, root = doc.documentElement;
 
-/* Priority nav: keep the menu on one row; tuck overflowing links under a "⋯" fold. */
-(function () {
-  var nav = document.querySelector('.site-nav');
-  if (!nav) return;
-  var ul = nav.querySelector('ul');
-  if (!ul) return;
+  /* ---------- 1 last-updated stamp ---------- */
+  (function () {
+    var el = doc.getElementById('last-updated');
+    if (!el) return;
+    var d = new Date(doc.lastModified);
+    if (isNaN(d.getTime())) return;
+    el.textContent = d.getFullYear() + '.' + String(d.getMonth() + 1).padStart(2, '0');
+  })();
 
-  var items = Array.prototype.slice.call(ul.children);
-
-  var more = document.createElement('li');
-  more.className = 'nav-more';
-  var details = document.createElement('details');
-  var summary = document.createElement('summary');
-  summary.textContent = '⋯';
-  summary.setAttribute('aria-label', 'More menu');
-  var panel = document.createElement('ul');
-  panel.className = 'nav-more-panel';
-  details.appendChild(summary);
-  details.appendChild(panel);
-  more.appendChild(details);
-
-  function layout() {
-    if (more.parentNode) more.parentNode.removeChild(more);
-    panel.innerHTML = '';
-    items.forEach(function (li) { ul.appendChild(li); });
-
-    if (ul.scrollWidth <= ul.clientWidth + 1) return; // everything fits
-
-    ul.appendChild(more);
-    for (var i = items.length - 1; i >= 0; i--) {
-      if (ul.scrollWidth <= ul.clientWidth + 1) break;
-      panel.insertBefore(items[i], panel.firstChild);
+  /* ---------- 2 mobile menu: aria-expanded, Esc, closes when focus leaves the header ---------- */
+  (function () {
+    var btn = doc.querySelector('.menu'), nav = doc.getElementById('nav'), head = doc.querySelector('.site-head');
+    if (!btn || !nav || !head) return;
+    function isOpen() { return btn.getAttribute('aria-expanded') === 'true'; }
+    function set(open, refocus) {
+      root.classList.toggle('menu-open', open);
+      btn.setAttribute('aria-expanded', String(open));
+      btn.textContent = open ? 'Close' : 'Menu';
+      if (!open && refocus) btn.focus();
     }
-    if (!panel.children.length && more.parentNode) {
-      more.parentNode.removeChild(more);
-    }
-  }
-
-  var t;
-  function onResize() { clearTimeout(t); t = setTimeout(layout, 100); }
-  layout();
-  window.addEventListener('resize', onResize);
-  window.addEventListener('load', layout);
-
-  document.addEventListener('click', function (e) {
-    if (!details.contains(e.target)) details.removeAttribute('open');
-  });
+    btn.addEventListener('click', function () { set(!isOpen()); });
+    nav.addEventListener('click', function (e) { if (isOpen() && e.target.closest('a')) set(false); });
+    doc.addEventListener('keydown', function (e) {
+      if ((e.key === 'Escape' || e.key === 'Esc') && isOpen()) { e.preventDefault(); set(false, true); }
+    });
+    head.addEventListener('focusout', function (e) {
+      if (isOpen() && e.relatedTarget && !head.contains(e.relatedTarget)) set(false);
+    });
+    var wide = matchMedia('(min-width:768px)');
+    wide.addEventListener('change', function () { if (wide.matches && isOpen()) set(false); });
+  })();
 })();

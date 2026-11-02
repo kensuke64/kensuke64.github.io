@@ -1,66 +1,115 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Kensuke Sawada / Teaching</title>
 <meta name="description" content="Teaching — Kensuke Sawada.">
-<link rel="stylesheet" href="style.css?v=20260809a">
+<!-- head:start -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,400;0,700;1,400&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@500&text=%E2%86%97&display=swap">
+<link rel="stylesheet" href="style.css?v=20261102c">
+<!-- head:end -->
 </head>
 <body>
 
-<div class="page">
+<!-- header:start -->
+<a class="skip" href="#main">Skip to content</a>
+<header class="site-head">
+  <div class="head-in wrap">
+    <a class="logo" href="index.html">Kensuke Sawada</a>
+    <button class="menu" type="button" aria-expanded="false" aria-controls="nav">Menu</button>
+    <nav class="nav" id="nav" aria-label="Main menu">
+      <ul class="nav-main">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="cv.html">CV</a></li>
+        <li><a href="research.html">Research</a></li>
+        <li><a href="teaching.html" aria-current="page">Teaching</a></li>
+        <li><a href="activities.html">Activities</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+<!-- header:end -->
 
-  <nav class="site-nav" aria-label="Primary">
-    <p class="dateline">Updated <span class="accent" id="last-updated">2026.04</span></p>
-    <ul>
-      <li><a href="index.html">Home</a></li>
-      <li><a href="cv.html">CV</a></li>
-      <li><a href="research.html">Research</a></li>
-      <li><a href="teaching.html" aria-current="page">Teaching</a></li>
-      <li><a href="activities.html">Activities</a></li>
-    </ul>
-  </nav>
+<main id="main" tabindex="-1">
 
-  <main>
+  <div class="page-open wrap">
+    <nav class="trail" aria-label="Breadcrumb"><a href="index.html">Home</a><span class="sep" aria-hidden="true">/</span><span aria-current="page">Teaching</span></nav>
+    <div class="grid">
+      <h1 class="page-title t-title">Teaching</h1>
+      <p class="page-intro">Current and past teaching assistantships.</p>
+    </div>
+  </div>
 
-    <header class="page-head">
-      <h1 class="page-title">Teaching</h1>
-      <p class="page-lede">Current and past teaching assistantships.</p>
-    </header>
-
-    <section>
-      <h2 class="label">Current and Upcoming</h2>
-      <ol class="papers">
+  <section class="sec wrap" aria-labelledby="current-h">
+    <div class="grid">
+      <h2 class="g-l" id="current-h">Current and Upcoming</h2>
+      <ol class="g-r rows">
         <li>
-          <h3 class="paper-title">Pre-seminar on Economics</h3>
-          <p class="paper-meta">Teaching Assistant for Prof. Hideo Owan, Waseda University. November 2026&ndash;January 2027.<br>Undergraduate seminar in organizational economics, focusing on the effects of AI on work. <a href="https://www.wsl.waseda.jp/syllabus/JAA104.php?pKey=110200P898012026110200P89811&amp;pLng=en" target="_blank" rel="noopener" class="nowrap">[Syllabus]</a></p>
+          <h3 class="r-t">Pre-seminar on Economics</h3>
+          <p class="r-sub">Teaching Assistant for Prof. Hideo Owan, Waseda University. November 2026&ndash;January 2027.<br>Undergraduate seminar in organizational economics, focusing on the effects of AI on work.</p>
+          <p class="links"><a class="more" href="https://www.wsl.waseda.jp/syllabus/JAA104.php?pKey=110200P898012026110200P89811&amp;pLng=en" target="_blank" rel="noopener">Syllabus<span class="ext" aria-hidden="true">↗</span></a></p>
         </li>
         <li>
-          <h3 class="paper-title">Introduction to HR Data Analytics with R and Python</h3>
-          <p class="paper-meta">Teaching Assistant. April 2024&ndash;Present. Open e-learning course hosted by the Institute for Empirical Research in Organizational Economics. <a href="https://peopleanalytics.or.jp/pacourse/" target="_blank" rel="noopener" class="nowrap">[Course site]</a></p>
+          <h3 class="r-t">Personnel Economics</h3>
+          <p class="r-sub">Teaching Assistant for Prof. Hideo Owan, Waseda University. October 2026&ndash;January 2027.<br>Undergraduate lecture course on human capital, incentives, promotion, and organizational design.</p>
+          <p class="links"><a class="more" href="https://www.wsl.waseda.jp/syllabus/JAA104.php?pKey=11020045J001202611020045J011&amp;pLng=en" target="_blank" rel="noopener">Syllabus<span class="ext" aria-hidden="true">↗</span></a></p>
+        </li>
+        <li>
+          <h3 class="r-t">Introduction to HR Data Analytics with R and Python</h3>
+          <p class="r-sub">Teaching Assistant. April 2024&ndash;Present. Open e-learning course hosted by the Institute for Empirical Research in Organizational Economics.</p>
+          <p class="links"><a class="more" href="https://peopleanalytics.or.jp/pacourse/" target="_blank" rel="noopener">Course site<span class="ext" aria-hidden="true">↗</span></a></p>
         </li>
       </ol>
-    </section>
+    </div>
+  </section>
 
-    <details class="other-section">
-      <summary class="label">Past Teaching</summary>
-      <ol class="papers">
-        <li>
-          <h3 class="paper-title">Regression Analysis for Social Sciences I</h3>
-          <p class="paper-meta">Teaching Assistant for Prof. Yoichi Arai, Waseda University. April&ndash;July 2023.<br>Undergraduate econometrics, based on Wooldridge&rsquo;s <em>Introductory Econometrics</em>. <a href="https://www.wsl.waseda.jp/syllabus/JAA104.php?pKey=18G000020201202318G000020218&amp;pLng=en" target="_blank" rel="noopener" class="nowrap">[Syllabus]</a></p>
-        </li>
-        <li>
-          <h3 class="paper-title">Regression Analysis for Social Sciences II</h3>
-          <p class="paper-meta">Teaching Assistant for Prof. Yoichi Arai, Waseda University. April&ndash;July 2023.<br>Undergraduate econometrics, based on Wooldridge&rsquo;s <em>Introductory Econometrics</em>. <a href="https://www.wsl.waseda.jp/syllabus/JAA104.php?pKey=18G000020301202318G000020318&amp;pLng=en" target="_blank" rel="noopener" class="nowrap">[Syllabus]</a></p>
-        </li>
-      </ol>
+  <section class="sec wrap">
+    <details class="fold">
+      <summary><h2>Past Teaching</h2></summary>
+      <div class="grid fold-body">
+        <ol class="g-r rows">
+          <li>
+            <h3 class="r-t">Regression Analysis for Social Sciences I</h3>
+            <p class="r-sub">Teaching Assistant for Prof. Yoichi Arai, Waseda University. April&ndash;July 2023.<br>Undergraduate econometrics, based on Wooldridge&rsquo;s <em>Introductory Econometrics</em>.</p>
+            <p class="links"><a class="more" href="https://www.wsl.waseda.jp/syllabus/JAA104.php?pKey=18G000020201202318G000020218&amp;pLng=en" target="_blank" rel="noopener">Syllabus<span class="ext" aria-hidden="true">↗</span></a></p>
+          </li>
+          <li>
+            <h3 class="r-t">Regression Analysis for Social Sciences II</h3>
+            <p class="r-sub">Teaching Assistant for Prof. Yoichi Arai, Waseda University. April&ndash;July 2023.<br>Undergraduate econometrics, based on Wooldridge&rsquo;s <em>Introductory Econometrics</em>.</p>
+            <p class="links"><a class="more" href="https://www.wsl.waseda.jp/syllabus/JAA104.php?pKey=18G000020301202318G000020318&amp;pLng=en" target="_blank" rel="noopener">Syllabus<span class="ext" aria-hidden="true">↗</span></a></p>
+          </li>
+        </ol>
+      </div>
     </details>
+  </section>
 
-  </main>
+</main>
 
-</div>
+<!-- footer:start -->
+<footer class="site-foot">
+  <div class="foot-in wrap grid">
+    <div class="foot-id">
+      <a class="foot-name" href="index.html">Kensuke Sawada</a>
+      <p>Master&rsquo;s Student in Economics, Waseda University</p>
+      <p>Office 601B, 513 Wasedatsurumaki-cho,<br>Shinjuku-ku, Tokyo 162-0041, Japan</p>
+      <p>sawada19171206 [at] moegi.waseda.jp</p>
+    </div>
+    <nav class="foot-ext" aria-labelledby="foot-links">
+      <p class="foot-h" id="foot-links">Links</p>
+      <ul>
+        <li><a href="https://sites.google.com/view/peworkshop/home" target="_blank" rel="noopener">Personnel Economics Workshop<span class="ext" aria-hidden="true">↗</span></a></li>
+        <li><a href="https://www.waseda.jp/inst/cro/institutes-list/institute-for-empirical-research-in-organizational-economics/" target="_blank" rel="noopener">Institute for Empirical Research in Organizational Economics<span class="ext" aria-hidden="true">↗</span></a></li>
+      </ul>
+    </nav>
+    <p class="foot-copy">© Kensuke Sawada. Updated <span id="last-updated">2026.11</span>.</p>
+  </div>
+</footer>
+<!-- footer:end -->
 
-<script src="script.js?v=20260729a"></script>
+<script src="script.js?v=20261102b"></script>
 </body>
 </html>

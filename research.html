@@ -1,67 +1,110 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Kensuke Sawada / Research</title>
 <meta name="description" content="Research — Kensuke Sawada.">
-<link rel="stylesheet" href="style.css?v=20260809a">
+<!-- head:start -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,400;0,700;1,400&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@500&text=%E2%86%97&display=swap">
+<link rel="stylesheet" href="style.css?v=20261102c">
+<!-- head:end -->
 </head>
 <body>
 
-<div class="page">
+<!-- header:start -->
+<a class="skip" href="#main">Skip to content</a>
+<header class="site-head">
+  <div class="head-in wrap">
+    <a class="logo" href="index.html">Kensuke Sawada</a>
+    <button class="menu" type="button" aria-expanded="false" aria-controls="nav">Menu</button>
+    <nav class="nav" id="nav" aria-label="Main menu">
+      <ul class="nav-main">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="cv.html">CV</a></li>
+        <li><a href="research.html" aria-current="page">Research</a></li>
+        <li><a href="teaching.html">Teaching</a></li>
+        <li><a href="activities.html">Activities</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+<!-- header:end -->
 
-  <nav class="site-nav" aria-label="Primary">
-    <p class="dateline">Updated <span class="accent" id="last-updated">2026.04</span></p>
-    <ul>
-      <li><a href="index.html">Home</a></li>
-      <li><a href="cv.html">CV</a></li>
-      <li><a href="research.html" aria-current="page">Research</a></li>
-      <li><a href="teaching.html">Teaching</a></li>
-      <li><a href="activities.html">Activities</a></li>
-    </ul>
-  </nav>
+<main id="main" tabindex="-1">
 
-  <main>
+  <div class="page-open wrap">
+    <nav class="trail" aria-label="Breadcrumb"><a href="index.html">Home</a><span class="sep" aria-hidden="true">/</span><span aria-current="page">Research</span></nav>
+    <div class="grid">
+      <h1 class="page-title t-title">Research</h1>
+      <p class="page-intro">Published papers, working papers, projects in progress, and other writings.</p>
+    </div>
+  </div>
 
-    <header class="page-head">
-      <h1 class="page-title">Research</h1>
-      <p class="page-lede">Published papers, working papers, projects in progress, and other writings.</p>
-    </header>
-
-    <section>
-      <h2 class="label">Work in Progress</h2>
-      <p class="paper-meta" style="margin-top: -1em; margin-bottom: 1.8em; color: var(--ink-faint);"><em>Titles are tentative.</em></p>
-      <ol class="papers">
+  <section class="sec wrap" aria-labelledby="wip-h">
+    <div class="grid">
+      <div class="g-l">
+        <h2 id="wip-h">Work in Progress</h2>
+        <p class="t-note mt-1">Titles are tentative.</p>
+      </div>
+      <ol class="g-r rows">
         <li>
-          <h3 class="paper-title">Promotion Hierarchies: The Role of Bosses&rsquo; Referrals</h3>
-          <p class="paper-meta">with <a href="https://roy1312.github.io/">Ruo Shangguan</a>, <a href="https://hideo-owan.net/">Hideo Owan</a>, and <a href="https://www.guidofriebel.com/">Guido Friebel</a>.</p>
+          <h3 class="r-t">Promotion Hierarchies: The Role of Bosses&rsquo; Referrals</h3>
+          <p class="r-sub">with <a href="https://roy1312.github.io/">Ruo Shangguan</a>, <a href="https://hideo-owan.net/">Hideo Owan</a>, and <a href="https://www.guidofriebel.com/">Guido Friebel</a>.</p>
         </li>
         <li>
-          <h3 class="paper-title">Ranking Japanese Firms Using Revealed Preference</h3>
-          <p class="paper-meta">with <a href="https://www.ritsukitagawa.com/home">Ritsu Kitagawa</a>.</p>
-        </li>
-      </ol>
-    </section>
-
-    <section>
-      <h2 class="label">Other Works</h2>
-      <ol class="papers">
-        <li>
-          <h3 class="paper-title">The Daughter Effect in Politics: Evidence from Japanese National Legislators</h3>
-          <p class="paper-meta">with Taketo Hara, <a href="https://www.ritsukitagawa.com/home">Ritsu Kitagawa</a>, and Takeru Sone. March 2026. <a href="https://ssrn.com/abstract=6455618" class="nowrap">[Working paper]</a></p>
-          <details class="abstract">
-            <summary>Abstract</summary>
-            <p>We examine how politicians&rsquo; family structure shapes policy preferences, focusing on the influence of daughters on attitudes toward gender-and family-related policies. Using original data on the number and gender of children of candidates elected to Japan&rsquo;s House of Representatives in 2021, combined with candidate survey responses collected during the election campaign, we analyze whether exposure to daughters affects positions on optional separate surnames for married couples, same-sex marriage, and legislation promoting understanding of sexual minorities. Exploiting plausibly exogenous variation in the number of daughters conditional on the number of children, we find that daughters are associated with more progressive policy positions among male candidates. Our findings highlight the role of family-based socialization in shaping elite political preferences and extend evidence on the &ldquo;daughter effect&rdquo; to a non-Western context.</p>
-          </details>
+          <h3 class="r-t">Ranking Japanese Firms Using Revealed Preference</h3>
+          <p class="r-sub">with <a href="https://www.ritsukitagawa.com/home">Ritsu Kitagawa</a>.</p>
         </li>
       </ol>
-    </section>
+    </div>
+  </section>
 
-  </main>
+  <section class="sec wrap">
+    <details class="fold">
+      <summary><h2>Other Works</h2></summary>
+      <div class="grid fold-body">
+        <ol class="g-r rows">
+          <li>
+            <h3 class="r-t">The Daughter Effect in Politics: Evidence from Japanese National Legislators</h3>
+            <p class="r-sub">with Taketo Hara, <a href="https://www.ritsukitagawa.com/home">Ritsu Kitagawa</a>, and Takeru Sone. March 2026.</p>
+            <p class="links"><a class="more" href="https://ssrn.com/abstract=6455618" target="_blank" rel="noopener">Working paper<span class="ext" aria-hidden="true">↗</span></a></p>
+            <details class="abstract">
+              <summary>Abstract</summary>
+              <p>We examine how politicians&rsquo; family structure shapes policy preferences, focusing on the influence of daughters on attitudes toward gender-and family-related policies. Using original data on the number and gender of children of candidates elected to Japan&rsquo;s House of Representatives in 2021, combined with candidate survey responses collected during the election campaign, we analyze whether exposure to daughters affects positions on optional separate surnames for married couples, same-sex marriage, and legislation promoting understanding of sexual minorities. Exploiting plausibly exogenous variation in the number of daughters conditional on the number of children, we find that daughters are associated with more progressive policy positions among male candidates. Our findings highlight the role of family-based socialization in shaping elite political preferences and extend evidence on the &ldquo;daughter effect&rdquo; to a non-Western context.</p>
+            </details>
+          </li>
+        </ol>
+      </div>
+    </details>
+  </section>
 
-</div>
+</main>
 
-<script src="script.js?v=20260729a"></script>
+<!-- footer:start -->
+<footer class="site-foot">
+  <div class="foot-in wrap grid">
+    <div class="foot-id">
+      <a class="foot-name" href="index.html">Kensuke Sawada</a>
+      <p>Master&rsquo;s Student in Economics, Waseda University</p>
+      <p>Office 601B, 513 Wasedatsurumaki-cho,<br>Shinjuku-ku, Tokyo 162-0041, Japan</p>
+      <p>sawada19171206 [at] moegi.waseda.jp</p>
+    </div>
+    <nav class="foot-ext" aria-labelledby="foot-links">
+      <p class="foot-h" id="foot-links">Links</p>
+      <ul>
+        <li><a href="https://sites.google.com/view/peworkshop/home" target="_blank" rel="noopener">Personnel Economics Workshop<span class="ext" aria-hidden="true">↗</span></a></li>
+        <li><a href="https://www.waseda.jp/inst/cro/institutes-list/institute-for-empirical-research-in-organizational-economics/" target="_blank" rel="noopener">Institute for Empirical Research in Organizational Economics<span class="ext" aria-hidden="true">↗</span></a></li>
+      </ul>
+    </nav>
+    <p class="foot-copy">© Kensuke Sawada. Updated <span id="last-updated">2026.11</span>.</p>
+  </div>
+</footer>
+<!-- footer:end -->
+
+<script src="script.js?v=20261102b"></script>
 </body>
 </html>

@@ -1,114 +1,138 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Kensuke Sawada / CV</title>
 <meta name="description" content="CV — Kensuke Sawada.">
-<link rel="stylesheet" href="style.css?v=20260809a">
+<!-- head:start -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,400;0,700;1,400&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@500&text=%E2%86%97&display=swap">
+<link rel="stylesheet" href="style.css?v=20261102c">
+<!-- head:end -->
 </head>
 <body>
 
-<div class="page">
+<!-- header:start -->
+<a class="skip" href="#main">Skip to content</a>
+<header class="site-head">
+  <div class="head-in wrap">
+    <a class="logo" href="index.html">Kensuke Sawada</a>
+    <button class="menu" type="button" aria-expanded="false" aria-controls="nav">Menu</button>
+    <nav class="nav" id="nav" aria-label="Main menu">
+      <ul class="nav-main">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="cv.html" aria-current="page">CV</a></li>
+        <li><a href="research.html">Research</a></li>
+        <li><a href="teaching.html">Teaching</a></li>
+        <li><a href="activities.html">Activities</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+<!-- header:end -->
 
-  <nav class="site-nav" aria-label="Primary">
-    <p class="dateline">Updated <span class="accent" id="last-updated">2026.04</span></p>
-    <ul>
-      <li><a href="index.html">Home</a></li>
-      <li><a href="cv.html" aria-current="page">CV</a></li>
-      <li><a href="research.html">Research</a></li>
-      <li><a href="teaching.html">Teaching</a></li>
-      <li><a href="activities.html">Activities</a></li>
-    </ul>
-  </nav>
+<main id="main" tabindex="-1">
 
-  <main>
+  <div class="page-open wrap">
+    <nav class="trail" aria-label="Breadcrumb"><a href="index.html">Home</a><span class="sep" aria-hidden="true">/</span><span aria-current="page">CV</span></nav>
+    <div class="grid">
+      <h1 class="page-title t-title">Curriculum Vitae</h1>
+      <p class="page-intro"><a class="more" href="assets/cv.pdf?v=20261102h" target="_blank" rel="noopener">View PDF<span class="ext" aria-hidden="true">↗</span></a></p>
+    </div>
+  </div>
 
-    <header class="page-head">
-      <h1 class="page-title">Curriculum Vitae</h1>
-      <p class="page-lede"><a href="assets/cv.pdf?v=20261005a" target="_blank" rel="noopener">View PDF ↗</a></p>
-    </header>
-
-    <section>
-      <h2 class="label">Education</h2>
-      <ol class="misc-list">
-        <li class="misc-item">
-          <img src="images/img-cv-ma.jpg" alt="Waseda University" class="misc-photo">
-          <div class="misc-text">
-            <h3 class="paper-title">Waseda University</h3>
-            <p class="paper-meta">M.A. in Economics, Tokyo, Japan. Sep. 2025&ndash;Present.</p>
-            <p class="paper-meta"><em>Advisor: Prof. Hideo Owan.</em></p>
+  <section class="sec wrap" aria-labelledby="edu-h">
+    <div class="grid">
+      <h2 class="g-l" id="edu-h">Education</h2>
+      <ol class="g-r rows rows-media">
+        <li>
+          <div class="ph r-3x2"><img src="images/img-cv-ma.jpg" alt="Waseda University"></div>
+          <div>
+            <h3 class="r-t">Waseda University</h3>
+            <p class="r-sub">M.A. in Economics, Tokyo, Japan. Sep. 2025&ndash;Present.</p>
+            <p class="r-sub">Advisor: Prof. Hideo Owan.</p>
           </div>
         </li>
-        <li class="misc-item">
-          <img src="images/img-cv-ba.jpg" alt="Waseda University" class="misc-photo">
-          <div class="misc-text">
-            <h3 class="paper-title">Waseda University</h3>
-            <p class="paper-meta">B.A. in Social Sciences, Tokyo, Japan. Apr. 2021&ndash;Sep. 2025.</p>
-          </div>
-        </li>
-        <li class="misc-item">
-          <img src="images/img-unc.jpg" alt="UNC Chapel Hill" class="misc-photo">
-          <div class="misc-text">
-            <h3 class="paper-title">University of North Carolina at Chapel Hill</h3>
-            <p class="paper-meta">Exchange Program, Chapel Hill, NC. Aug. 2024&ndash;May 2025.</p>
-          </div>
-        </li>
-      </ol>
-    </section>
-
-    <section>
-      <h2 class="label">Research Experience</h2>
-      <ol class="misc-list">
-        <li class="misc-item">
-          <img src="images/logo.png" alt="Institute for Empirical Research in Organizational Economics" class="misc-photo" style="background: var(--bg); object-fit: contain; filter: none; transform: scale(1.15);">
-          <div class="misc-text">
-            <h3 class="paper-title">Research Assistant</h3>
-            <p class="paper-meta">Prof. Hideo Owan, Institute for Empirical Research in Organizational Economics, Waseda University. Apr. 2024&ndash;Present.</p>
-          </div>
-        </li>
-        <li class="misc-item">
-          <img src="images/UTEcon_logo.svg" alt="UTokyo Economic Consulting" class="misc-photo" style="background: var(--bg); padding: 0;">
-          <div class="misc-text">
-            <h3 class="paper-title">Research Assistant</h3>
-            <p class="paper-meta">UTokyo Economic Consulting Inc. May 2023&ndash;Present.</p>
+        <li>
+          <div class="ph r-3x2"><img src="images/img-cv-ba.jpg" alt="Waseda University"></div>
+          <div>
+            <h3 class="r-t">Waseda University</h3>
+            <p class="r-sub">B.A. in Social Sciences, Tokyo, Japan. Apr. 2021&ndash;Sep. 2025.</p>
+            <p class="r-sub">Exchange at University of North Carolina at Chapel Hill.</p>
           </div>
         </li>
       </ol>
-    </section>
+    </div>
+  </section>
 
-    <section>
-      <h2 class="label">Grants</h2>
-      <ol class="award-list">
-        <li class="award-item">
-          <span class="award-year">2026&ndash;2027</span>
-          <span class="award-text">Research Grant, Labor Research Center. JPY 800,000.</span>
+  <section class="sec wrap" aria-labelledby="exp-h">
+    <div class="grid">
+      <h2 class="g-l" id="exp-h">Research Experience</h2>
+      <ol class="g-r rows rows-media">
+        <li>
+          <div class="ph r-3x2 is-logo"><img src="images/logo.png" alt="Institute for Empirical Research in Organizational Economics"></div>
+          <div>
+            <h3 class="r-t">Research Assistant</h3>
+            <p class="r-sub">Prof. Hideo Owan, Institute for Empirical Research in Organizational Economics, Waseda University. Apr. 2024&ndash;Present.</p>
+          </div>
+        </li>
+        <li>
+          <div class="ph r-3x2 is-logo"><img src="images/UTEcon_logo.svg" alt="UTokyo Economic Consulting"></div>
+          <div>
+            <h3 class="r-t">Research Assistant</h3>
+            <p class="r-sub">UTokyo Economic Consulting Inc. May 2023&ndash;Present.</p>
+          </div>
         </li>
       </ol>
-    </section>
+    </div>
+  </section>
 
-    <section>
-      <h2 class="label">Awards &amp; Honors</h2>
-      <ol class="award-list">
-        <li class="award-item">
-          <span class="award-year">2026</span>
-          <span class="award-text">Okuma Memorial Scholarship, Waseda University.</span>
-        </li>
-        <li class="award-item">
-          <span class="award-year">2025</span>
-          <span class="award-text">Dean&rsquo;s List, University of North Carolina at Chapel Hill.</span>
-        </li>
-        <li class="award-item">
-          <span class="award-year">2023, 2024</span>
-          <span class="award-text">Dean&rsquo;s List, Waseda University.</span>
-        </li>
+  <section class="sec wrap" aria-labelledby="grants-h">
+    <div class="grid">
+      <h2 class="g-l" id="grants-h">Grants</h2>
+      <ol class="g-r rows rows-year">
+        <li><span class="y">2026&ndash;2027</span><span>Research Grant, Labor Research Center. JPY 800,000.</span></li>
       </ol>
-    </section>
+    </div>
+  </section>
 
-  </main>
+  <section class="sec wrap" aria-labelledby="awards-h">
+    <div class="grid">
+      <h2 class="g-l" id="awards-h">Awards &amp; Honors</h2>
+      <ol class="g-r rows rows-year">
+        <li><span class="y">2026</span><span>Okuma Memorial Scholarship, Waseda University.</span></li>
+        <li><span class="y">2025</span><span>Dean&rsquo;s List, University of North Carolina at Chapel Hill.</span></li>
+        <li><span class="y">2023, 2024</span><span>Dean&rsquo;s List, Waseda University.</span></li>
+      </ol>
+    </div>
+  </section>
 
-</div>
+</main>
 
-<script src="script.js?v=20260729a"></script>
+<!-- footer:start -->
+<footer class="site-foot">
+  <div class="foot-in wrap grid">
+    <div class="foot-id">
+      <a class="foot-name" href="index.html">Kensuke Sawada</a>
+      <p>Master&rsquo;s Student in Economics, Waseda University</p>
+      <p>Office 601B, 513 Wasedatsurumaki-cho,<br>Shinjuku-ku, Tokyo 162-0041, Japan</p>
+      <p>sawada19171206 [at] moegi.waseda.jp</p>
+    </div>
+    <nav class="foot-ext" aria-labelledby="foot-links">
+      <p class="foot-h" id="foot-links">Links</p>
+      <ul>
+        <li><a href="https://sites.google.com/view/peworkshop/home" target="_blank" rel="noopener">Personnel Economics Workshop<span class="ext" aria-hidden="true">↗</span></a></li>
+        <li><a href="https://www.waseda.jp/inst/cro/institutes-list/institute-for-empirical-research-in-organizational-economics/" target="_blank" rel="noopener">Institute for Empirical Research in Organizational Economics<span class="ext" aria-hidden="true">↗</span></a></li>
+      </ul>
+    </nav>
+    <p class="foot-copy">© Kensuke Sawada. Updated <span id="last-updated">2026.11</span>.</p>
+  </div>
+</footer>
+<!-- footer:end -->
+
+<script src="script.js?v=20261102b"></script>
 </body>
 </html>
