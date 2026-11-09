@@ -1,5 +1,8 @@
 .DS_Store
 
+# The local editing app. This folder is served as it stands, so the app stays out of git.
+/editor/
+
 # CV: keep the LaTeX source (cv.tex) and the served copy (assets/cv.pdf);
 # ignore the raw upload and the root build output.
 cv.zip
